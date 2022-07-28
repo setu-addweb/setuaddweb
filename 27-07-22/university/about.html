@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="view port" content="with=device-width,initial-scale=1.0">
+    <title>University website </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=
+Poppins:ital,wght@0,200;0,300;0,400;0,600;0,700;1,100&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/
+fontawesome-free@6.1.1/css/fontawesome.min.css">
+
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="photos/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li> 
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars"onclick="showMenu()" ></i>
+        </nav>
+         <h1>About Us</h1>
+
+
+    </section>
+    <!----------------about us content------------------>
+   <section class="about-us">
+    <div class="row">
+        <div class="about-col">
+           <h1>We are the world's largest University</h1>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam modi praesentium maxime unde autem quod fugit excepturi accusamus voluptate,
+             corporis, nemo dolore suscipit est rerum at debitis reprehenderit dignissimos atque. 
+             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur nostrum repellendus 
+             aut blanditiis. Maiores, aliquid vero id illum, modi consequatur impedit nulla laborum 
+             autem voluptas mollitia quam cupiditate ad nisi.</p>
+             <a href="" class="hero-btn red-btn">EXPLORE NOW</a>
+        </div>
+        <div class="about-col">
+            <img src="photos/about.jpg">
+        </div>
+    </div>
+   </section>
+
+    <!-----------------------Footer---------------------------->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Pariatur recusandae possimus consequuntur modi aut mollitia <br>
+            deleniti fugit illum quae ipsam commodi quasi aliquam.</p>
+        <div class="icons">
+           <img src="photos/facebook-new.png">
+           <img src="photos/instagram-new.png">
+           <img src="photos/linkedin.png">
+           <img src="photos/twitter.png">  
+        </div>
+        <p>Made with<img class="im"src="photos/icons8-heart-24.png"> by Setu Patel</p>
+
+    </section>
+
+
+
+
+
+
+
+
+    <!----------javaScript for Toggle Menu----------->
+    <script>
+        var navLinks= document.getElementById("navLinks")
+
+        function showMenu(){
+            navLinks.style.right = "0px";
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+</html>

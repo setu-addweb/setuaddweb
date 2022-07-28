@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>sum for variable</title>
+        <script type="text/javascript">
+            function show() {
+
+                var a = parseInt(document.getElementById("text1").value);
+                var b = parseInt(document.form1.text2.value);
+                var c = a+b;
+                var d = a-b;
+                var e = a*b;
+
+                document.getElementById("abc").innerHTML = c + " " + d + " " +e;
+                document.write(c + " " +d + " " +e);
+                alert(c + " " +d + " " +e);
+                console.log(c + " " +d + " " +e);
+                
+
+                
+
+            }
+
+            
+        </script>
+
+    </head>
+
+    <body>
+        <form id="form1" name="form1" method="get">
+            First Value:<input type="text" id="text1" />
+            <br/> Second Value:<input type="text" id="text2" />
+            <br/> <input type="button" id="btn1" value="Click me" onclick="show()" />
+        </form>
+        <b id="abc">
+    
+        </b>
+    </body>
+</html>

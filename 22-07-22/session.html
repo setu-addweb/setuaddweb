@@ -1,0 +1,33 @@
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <script type="text/javascript">
+        function sessionemail() {
+           var a = document.getElementById("mail").value;
+           sessionStorage.setItem("email",a);
+   
+           alert("Your Email" +sessionStorage.getItem("email")+"is saved in session storage")
+   
+   
+        }
+       </script>
+
+<body>
+    <!--<script type="text/javascript">
+        if (sessionStorage.hits) {
+            sessionStorage.hits = Number(sessionStorage.hits) + 1;
+        } else {
+            sessionStorage.hits = 1;
+        }
+        document.write("Total Hits :" + sessionStorage.hits);
+    </script>-->
+
+    <form id="form1" action="">
+        <label for="mail"> Email:</label> <input type="email" id="mail" ><br/>
+       <input type="button" onclick="sessionemail()" value="submit">
+     </form>    
+</body>
+
+</html>

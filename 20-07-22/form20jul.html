@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <title>Registration Page </title>
+    </head>
+    <body background="photos/bg.jpg" >
+
+    <form id="form1" name="form1" method="get" style="text-align: center;" >
+        <fieldset>
+          
+            <legend><b><h1><mark>Registration Page </mark></h1></b></legend>
+
+               Frist Name:<input type="text" id="fname" placeholder="Frist name " size="30" required autofocus/><br/><br/>
+
+               Last Name:<input type="text" id="lname" placeholder="Last name " /><br/><br/>
+
+               Email:<input type="email" id="email" placeholder="email" required /><br/><br/>
+
+               Phone Number:<input type="tel" id="number"  placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"/><br/><br/>
+
+               Password:<input type="password" id="Password" placeholder="Password" required maxlength="4" /><br/><br/>
+
+               Confirm P assword:<input type="password" id="password" placeholder=" confirm password" required /><br/><br/>
+
+               Gender:<input type="radio" id="radio1" name="radio1" value="Male">Male</input>
+
+               <input type="radio" id="radio1" name="radio1" value="FeMale">FeMale</input><br/><br/>
+
+               Date of Birth:<input type="datetime-local" id="date1" required><br/><br/>
+
+               Address: <textarea id="text1" rows="8" cols="20"></textarea><br/><br/>
+
+               State: <select id="select1">
+                  <option value="">select A State</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Panjab">Panjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Uttar-Pradesh">Uttar-Pradesh</option>
+                </select><br/><br/>
+
+                City: <select id="select2" size="2" multiple>
+                    <option value="">select A City</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Indor">Indor</option>
+                    <option value="Bhopal">Bhopal</option>
+                  </select><br/><br/>
+
+                  Area PIN:<input type="number" id="number" placeholder="Area PIN" required /><br/><br/>
+
+                <label>Hobbie:</label>
+                <input type="checkbox" id="check1" name="check1" value="Cooking" /> Cooking<br/>
+                <input type="checkbox" id="check2" name="check2" value="Travelling" /> Travelling<br/>
+                <input type="checkbox" id="check1" name="check1" value="Dancing" /> Dancing  <br/><br/>
+
+               
+
+          <table align="center" border="1">
+ 
+            <tr>
+            <td><b>Sl.No.</b></td>
+            <td><b>Examination</b></td>
+            <td><b>Board</b></td>
+            <td><b>Percentage</b></td>
+            <td><b>Year of Passing</b></td>
+            </tr>
+             
+            <tr>
+            <td>1</td>
+            <td>Class X</td>
+            <td><input type="text" name="ClassX_Board" maxlength="30" required/></td>
+            <td><input type="text" name="ClassX_Percentage" maxlength="30" required/></td>
+            <td><input type="text" name="ClassX_YrOfPassing" maxlength="30" required/></td>
+            </tr>
+             
+            <tr>
+            <td>2</td>
+            <td>Class XII</td>
+            <td><input type="text" name="ClassXII_Board" maxlength="30" required /></td>
+            <td><input type="text" name="ClassXII_Percentage" maxlength="30" required/></td>
+            <td><input type="text" name="ClassXII_YrOfPassing" maxlength="30" required/></td>
+            </tr>
+             
+            <tr>
+            <td>3</td>
+            <td>Graduation</td>
+            <td><input type="text" name="Graduation_Board" maxlength="30" required/></td>
+            <td><input type="text" name="Graduation_Percentage" maxlength="30" required/></td>
+            <td><input type="text" name="Graduation_YrOfPassing" maxlength="30" required/></td>
+            </tr>
+             
+            
+             
+          </table><br/><br/>
+
+        
+                
+            <h2>COURSES APPLIED FOR:</h2> <br/>
+                
+            BCA
+            <input type="radio" name="1" value="BCA" id="1" >
+            B.Com
+            <input type="radio" name="1" value="B.Com" id="1">
+            B.Sc
+            <input type="radio" name="1" value="B.Sc" id="1">
+            B.A
+            <input type="radio" name="1" value="B.A" id="1 "><br/><br/><br/>
+
+            Select your favorite color:
+            <input type="color" name="fcolor" value=""><br/><br/>
+
+            Document:
+            <label for="myfile">Select a file:</label>
+            <input type="file" id="myfile" name="myfile"><br><br>
+
+            Quantity:
+            <input type="number" id="quantity" name="quantity" min="0" max="100" step="10" value="30"><br/><br/>
+                    
+
+            <input type="submit" id="submit"/>
+            <input type="reset" id="reset"/>
+            <button name="btn1" id="btn1" value="Click Me">Click Me</button>
+            <input type="image" id="img1" src="img.jpg" width="60px" height="60px"><br/><br/>
+      
+            First Name<input type="text" id="disabled" name="disabled" value="setu" disabled><br><br/>
+
+            Last Name:<input type="text" id="lname" placeholder="Last name " value="setu" readonly required/><br/><br/>
+
+            points:<input type="number" id="points" name="points" step="3"><br/><br/>
+
+        </fieldset>
+
+    </form>
+
+    </body>
+</html>
+
+ background full size code::  style="background-repeat:no-repeat;background-position: center;background-size: cover;"
