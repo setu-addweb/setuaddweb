@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>loginform</title>
+    <script type="text/javascript">
+        function localemail() {
+           var a = document.getElementById("mail").value;
+           localStorage.setItem("email",a);
+           sessionStorage.setItem("email",a);
+   
+           alert("Your Email" +localStorage.getItem("email")+"is saved in local storage")
+           alert("Your Email"+sessionStorage.getItem("email")+"saved in your session storage")
+           
+           var b = document.getElementById("password").value;
+           localStorage.setItem("password1",b);
+           sessionStorage.setItem("password1",b);
+   
+           alert("Your Password" +localStorage.getItem("password1")+"is saved in local storage")
+           alert("Your Password"+sessionStorage.getItem("password1")+"saced in session storage")
+           
+           
+   
+        }
+       </script>
+        <style type="text/css">
+            .fieldset{
+                
+                margin: 300px;
+                margin-left: 400px;
+                margin-right: 400px;
+                height: 250px;
+                text-align: center;
+                border-radius: 20px;
+                
+
+            }
+            body{
+                background: url('images/bg.jpg');
+                background-size: cover;
+            }
+            .contact-col{
+                flex-basis: 48%;
+                margin-bottom: 30px;
+            }
+            .contact-col div{
+                display: flex;
+                align-items:center;
+                margin-bottom: 40px;
+                margin-left: 200px;
+            }
+            .contact-col input{
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 17px;
+            outline: none;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .main__btn{
+            width: 200px;
+            height: 40px;
+            font-size: 25px;
+            border-radius: 5px;
+            background: pink;
+        }
+        .main__btn:hover{
+            background: #4837ff;
+            transition: all 0.3s ease;
+        }
+        
+            
+        </style>
+</head>
+<body>
+    <fieldset class="fieldset" style="background-color:rgb(242, 246, 248);">
+     <legend><h1>Login Page</h1></legend>
+     <div class="contact-col">
+        <form action="">
+            
+           <input type="email" placeholder="Enter email"id="mail" required>
+           <input type="password1" placeholder="Enter your password"id="password" required>
+           
+        
+         <button type="submit" class="main__btn" onclick="localemail()">Sbmit</button>
+         
+
+        </form>
+    </div>
+     
+       
+    </fieldset>
+</body>
+</html>
+
+<!--<form id="form1" action="" style="text-align:center;line-height: 2;">
+    <label for="mail"> Email:</label> <input type="email" id="mail" plceholder="Enter Email"><br/>
+    <label for="password"> Password:</label> <input type="password1" id="password"plceholder="Enter password" ><br/>
+    <input type="button" onclick="localemail()" value="submit" style="width: 200px;height:40px; font-size:30px;">
+   
+ </form>-->
