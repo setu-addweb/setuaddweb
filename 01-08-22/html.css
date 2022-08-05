@@ -1,0 +1,646 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+ }
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background: url(images/image1.png);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.header1{
+    height: 90px;
+    width: 100%;
+    float: left;
+    margin-top: 60px;
+}
+.header2 {
+    height: 90px;
+    width: 200px;
+    float: left;
+    display: flex;
+    padding-left: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header2 h1{
+    font-family: 'Cinzel', serif;
+    font-size: 40px;
+}
+.header2 img{
+    width: 150px;
+    height:60px;
+    width:30px;
+
+}
+.header3{
+    float:left;
+    height: 90px;
+    width: 300px;
+    padding-left: 1200px;
+}
+.header4{
+    float: right;
+    height: 90px;
+    width: 100px;
+} 
+.header4 img{
+    height:90px; 
+    width:70px;
+}
+.menu{
+    text-align: right;
+    flex: 1;
+}
+.menu ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px 12px;
+    position: relative;
+  
+}
+.menu ul li a{
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+    font-size: 25px;
+    
+    
+}
+.menu ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.menu ul li:hover::after{
+    width: 100%;
+}
+.container{
+    height: 600px;
+    width: 100%;
+ 
+}
+.container1{
+    height: 600px;
+    width: 1000px;
+  
+    float: left;
+    
+}
+.container1 h1{
+    font-family: 'Cinzel', serif;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bolder;
+}
+.container1 h2{
+    font-family: 'Cinzel', serif;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Londrina Outline', cursive;
+    font-size: 150px;
+  
+    text-align: center;
+   
+}
+.container1 h3{
+    font-size: 40px;
+    text-align: center;
+}.container1 hr{
+    width: 700px;
+    border: 2px solid black;
+    margin-left: 150px;
+}
+.container3{
+
+    height: 100px;
+    width: 1000px;
+    text-align: center;
+
+}
+.container03{
+
+    text-align:right;
+    float:left;
+    width: 500px;
+}
+.container003{
+  
+    float: left;
+    width: 100px;
+    height: 50px;
+  
+}
+.container003 h5{
+    font-family: 'Londrina Outline', cursive;
+    font-size: 40px;
+}
+.container2{
+    height: 500px;
+    width: 800px;
+    float: left;
+}
+.container2 img{
+    width:600px;
+    height:600px;
+}
+.container2 img:hover{
+    transform: scale(1.075);
+    transition: 0.2s ease-in;
+    cursor: pointer;
+   
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(12, 10, 10);
+    border: 2px solid rgb(9, 8, 8);
+    padding: 12px 34px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: yellow;
+    position: relative;
+    cursor:pointer;
+
+}
+.btn-font{
+    font-style: bold;
+    font-size: 30px;
+}
+.btn-font1{
+    font-size: 20px;
+}
+.hero-btn:hover{
+    border: 2px solid #080808;
+    background: #f44336;
+    transition: 1s;
+}
+.text1{
+    height: 150px;
+    width: 100%;
+    margin-top: 50px;
+}
+.text1 h1{
+    text-align: center;
+    font-family: 'Londrina Outline', cursive;
+    font-size: 70px;
+}
+.text1 p{
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 22px;
+    text-align: center;
+}
+.images{
+    height:700px;
+    width: 100%;
+  }
+
+
+  .empty-color {
+    width: 100%;
+    height: 100px;
+    background-color: darkkhaki;
+    position:relative;
+    top: 25%;
+    background-position: center;
+    background-size: cover;
+
+  }
+  .color1{
+    width: 100%;
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+    float: left;
+    position:absolute;
+   
+    
+   
+  }
+  .image1{
+    height:600px;
+    width: 610px;
+    float: left;
+    text-align: center;
+    padding-bottom: 100px;
+    
+   
+  }
+  .image1 img{
+    width:300px;
+    height:300px;
+  }
+  .image2 img{
+    width:300px;
+    height:300px;
+  } .image3 img{
+    width:300px;
+    height:300px;
+  }
+  .image2{
+    height:600px;
+    width: 610px;
+    float: left;
+    text-align: center;
+   
+ 
+  }
+  .image3{
+    height:600px;
+    width: 618px;
+    float: left;
+    text-align: center;
+   
+  
+  }
+  .images p{
+    font-size: 25px;
+  }
+  .images img:hover{
+    transform: scale(1.075);
+    transition: 0.2s ease-in;
+    cursor: pointer;
+   
+}
+.text2{
+    height: 250px;
+    margin-top: 100px;
+}
+.text2 h2{
+    text-align: center;
+    font-size: 30px;
+}
+.text2 h1{
+    text-align: center;
+    font-family: 'Londrina Outline', cursive;
+    font-size: 70px;
+}
+.text2 p{
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 22px;
+    text-align: center;
+}
+.images2{
+    width: 100%;
+    height: 550px;
+    
+}
+.sd{
+    min-height: 400px;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7)
+    ,rgba(4,9,30,0.7)),url(images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    align-items:center;
+    float: left;
+}
+.sliders{
+    margin: 0 auto;
+    width: 100%;
+    align-items:center;
+    margin-left: 500px;
+  
+}
+.slide img{
+    width:800px;
+    min-height:500px;
+}
+.slider{
+    overflow:hidden;
+    height: 400px;
+    width: 500px;
+    align-items:center;
+    left: 50%;
+    margin-left: 35%;
+   
+
+}
+.slider:hover{
+    transform: scale(1.075);
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+.slider figure div{
+    float: left;
+    width: 20%;
+    align-items:center;
+    left: 50%;
+    
+    
+}
+.slider figure img{
+    width: 500px;
+    float: left;
+    align-items:center;
+    left: 70%;
+    
+   
+}
+.slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0px;
+    animation: 20s setu infinite;
+    align-items:center;
+    left: 50%;
+    
+}
+@keyframes setu {
+    0%{
+      left: 0%;
+    }
+    10%{
+        left: 0%;
+    }
+    12%{
+        left: -100%;
+    }
+    22%{
+        left: -100%;
+    }
+    24%{
+        left: -200%;
+    }
+    34%{
+        left: -200%;
+    }
+    36%{
+        left: -300%;
+    }
+    46%{
+        left: -300%;
+    } 
+    48%{
+        left: -400%;
+    } 
+    58%{
+        left: -400%;
+    }
+    60%{
+        left: -300%;
+    }
+    70%{
+        left: -300%;
+    }
+    72%{
+        left: -200%;
+    }
+    82%{
+        left: -200%;
+    }
+    84%{
+        left: -100%;
+    }
+    94%{
+        left: -100%;
+    }
+    96%{
+        left: 0%;
+    }
+
+    
+}
+.image-grid{
+    width: 100%;
+    height: 520px;
+    left: 50%;
+    
+}
+.image-grid01{
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    float: left;
+}
+.image-grid1{
+    width: 530px;
+    height: 600px;
+    float: left;
+    position: relative;
+    z-index: 1;  
+}
+.layer{
+    position: absolute;
+    top: 0%;
+    color: #fff;
+    margin: 20PX;
+    font-size: 25px;
+}
+.layer h4{
+    font-size: 60px;
+}
+
+
+.image-grid1 img{
+    left: 50%;
+    width:500px;
+     height:520px;
+   
+}
+.image-grid2{
+    width: 500px;
+    height: 300px;
+    float: left;
+    position: relative;
+  
+}
+.image-grid2 img{
+    width:500px;
+     height:240px;
+}
+.image-grid2 h4{
+    font-size: 40px;
+}
+.image-grid3{
+    width: 500px;
+    height: 300px;
+    margin-top: 25px;  
+    position: relative;
+    float: left;
+}
+.image-grid3 img{
+    width:500px;
+     height:245px;
+}
+
+.form{
+    width: 100%;
+    height:500px;
+    text-align: center;
+    margin-top: 150px;
+    
+}
+.form h1{
+     text-align: center;
+     font-size: 30px;
+}
+.form h2{
+    text-align: center;
+    font-family: 'Londrina Outline', cursive;
+    font-size: 70px;
+}
+
+.form input{
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 17px;
+    margin-top: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 20px; 
+}
+.inputform{
+    margin-left: 50px;
+
+}
+.inputform input{
+    width:400px;
+     height:60px;
+}
+.hero-btn1{
+    margin-left: 50px;
+}
+
+.hero-btn1{
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(12, 10, 10);
+    border: 2px solid rgb(9, 8, 8);
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: yellow;
+    position: relative;
+    cursor:pointer;
+    width: 370px;
+    padding: 17px;
+    margin-bottom: 17px;
+
+}
+.hero-btn1:hover{
+    border: 2px solid #080808;
+    background: #f44336;
+    transition: 1s;
+}
+.footer{
+    height: 500px;
+    width: 100%;
+}
+.footer1{
+    height:500px;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7)
+    ,rgba(4,9,30,0.7)),url(images/footer2.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    align-items:center;
+    float: left;
+}
+.footertext1{
+    height: 400px;
+    width: 100px;
+    float: left;
+}
+.footertext2{
+    height: 400px;
+    width: 500px;
+    float: left;
+    color: #fff;
+}
+.footertext2-1 {
+    height: 90px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footertext2-1 h1{
+    font-family: 'Cinzel', serif;
+    font-size: 40px;
+}
+.footertext2-1 img{
+    width: 100px;
+    height:60px; 
+    width:30px;
+}
+.footertext2 p{
+    color: #fff;
+    font-size: 18px;
+}
+.footertext3{
+    height: 400px;
+    width: 200px;
+    float: left;
+  
+}
+.footertext4{
+    height: 200px;
+    width: 500px;
+    color: #fff;
+    float:left;
+    padding-top: 170px;
+   
+   
+}
+
+.footertext4 div{
+    display:flex;
+
+}
+.footertext4 img{
+    width:40px; 
+    height:50px;
+}
+.footertext4 div h3{
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 10px; 
+}
+.footertext5{
+    height: 30px;
+    width: 100%;
+    float: left;
+    left: 100px;
+    color: #fff;
+    font-size: 20px; 
+
+}
+.footertext5-1{
+    height: 30px;
+    width: 150px;
+    float: left;
+}
+.footertext5-2{
+    height: 30px;
+    width: 700px;
+    float: left;
+}
+.icon-contact{
+    height: 30px;
+    width: 700px;
+    float: left;
+    text-align: right;
+}
+.icon-contact img{
+    background-color: #fff;
+    border-radius: 30px;
+    height:60px;
+     width:60px;
+}
