@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marks</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        function tt(){
+        let total,m1,m2,m3,m4,m5,avg,pra;
+        m1 = 70;
+        m2 = 50;
+        m3 = 90;
+        m4=59;
+        m5=79;
+        total = m1+m2+m3+m4+m5;
+        avg = total/5;
+        pra = (total / 500.0 )* 100;
+
+        document.getElementById('result').innerHTML = "total is: "+ total+"<br>age is: "+ avg+"<br>Percentage is: "+ pra;
+        }
+    </script>
+   
+   <h1>total,avg and pra</h1>
+   <p><button onclick="tt()">Clickme!</button></p>
+   <p id="result"></p>
+</body>
+</html>

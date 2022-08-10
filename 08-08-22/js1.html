@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>sum for variable</title>
+        <script type="text/javascript">
+            function sum() {
+                 let c;
+                 a = parseInt(document.getElementById("myNo").value);
+                 b = parseInt(document.getElementById("myNo1").value);
+                 c = parseInt(a+b);
+    
+
+                document.getElementById("abc").innerHTML = "Sum is: "+ c;
+            }
+
+            
+        </script>
+
+    </head>
+
+    <body>
+        <p>Enter the A: <input type="text" name="text" id="myNo"></p>
+        <p>Enter the B: <input type="text" name="text" id="myNo1"></p>
+        <p><button onclick="sum()">Clickme!</button></p>
+        <b id="abc">
+    
+        </b>
+    </body>
+</html>

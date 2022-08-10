@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function myfun(){
+            num = document.getElementById('myNo').value
+            if(num % 2 == 0){
+                document.getElementById('abc').innerHTML = "number is even: "+ num;
+            }
+            else{
+                document.getElementById('abc').innerHTML ="number is odd: "+ num;
+            }
+        }
+    </script>
+      <p>Enter the A: <input type="text" name="text" id="myNo"></p>
+      <p><button onclick="myfun()">Clickme!</button></p>
+      <b id="abc">
+
+    </b>
+</body>
+</html>

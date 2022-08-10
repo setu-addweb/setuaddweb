@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>months and days </title>
+        <script type="text/javascript">
+            function days() {
+                let Days,months;
+               
+                 days = parseInt(document.getElementById('myNo').value) ;
+                 months =parseInt(days/30) ;
+                 Days = parseInt(days%30); 
+
+                document.getElementById("abc").innerHTML = "month is: "+ months +"<br>day is :"+Days;
+            }
+
+            
+        </script>
+
+    </head>
+
+    <body>
+        <p>Enter the days: <input type="text" name="text" id="myNo"></p>
+        <p><button onclick="days()">Clickme!</button></p>
+        <b id="abc">
+    
+        </b>
+    </body>
+</html>

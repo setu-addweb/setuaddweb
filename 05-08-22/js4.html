@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rs convert in notes</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function myfunction(){
+            let amount = document.getElementById('myNo').value;
+            let A,B,C,D,E,F;
+            A=amount/100;
+           
+            B=amount/50;
+           
+            C=amount/20;
+          
+            D=amount/10;
+           
+            E=amount/5;
+           
+            F=amount/2;
+        
+            document.getElementById('result').innerHTML = " 100 notes: "+A +" 50 notes: "+B+" 20 notes: "+C+" 10 notes: "+D+" 5 notes: "+E+" 2 notes: "+F ;
+        }
+    </script>
+
+    <p>Enter the number: <input type="text" name="text" id="myNo"></p>
+
+    <p><button onclick="myfunction()">Clickme!</button></p>
+    <p id="result"></p>
+</body>
+</html>

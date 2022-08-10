@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>armstrong</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function myfun(){
+            let n =document.getElementById('myNo').value;
+            var ch = (n%2==0 ? "even":"odd");
+
+
+            document.write(ch);
+        }
+    </script>
+     <p>Enter the A: <input type="text" name="text" id="myNo"></p>
+     <p><button onclick="myfun()">Clickme!</button></p>
+     <p id="result"></p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>pattern</title>
+        <script type="text/javascript">
+            function pattern() {
+              let i ,j,k=1,old;
+              old =k-1;
+
+              for(i=0;i<5;i++)
+              {
+                for(j=0;j<=i;j++){
+                    document.write((k)+" ")
+                    k++
+                    if(k>9)
+                  {
+                    k=old;
+                  }
+                }
+              
+                document.write("<br>")
+              }
+            }
+
+            
+        </script>
+
+    </head>
+
+    <body>
+        <p><button onclick="pattern()">Clickme!</button></p>
+        <b id="abc">
+    
+        </b>
+    </body>
+</html>
+
+<!--1
+    23
+    456
+    7890
+    12345-->

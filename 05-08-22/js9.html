@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alphabets</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function count(){
+
+       
+         var upper = 0,
+             lower = 0,
+             number = 0,
+             special = 0;
+        let str = document.getElementById('myNo').value;
+        for (var i = 0; i < str.length; i++)
+        {
+          if (str[i] >= "A" && str[i] <= "Z") upper++;
+          else if (str[i] >= "a" && str[i] <= "z") lower++;
+          else if (str[i] >= "0" && str[i] <= "9") number++;
+          else special++;
+        }
+        document.getElementById("result").innerHTML ="Upper case is: "+upper+"<br>Lower case is: "+lower+"<br>number is: "+number+"<br>special is: "+special;
+    }
+    </script>
+
+        <p>Enter the str: <input type="text" name="text" id="myNo"></p>
+
+        <p><button onclick="count()">Clickme!</button></p>
+        <p id="result"></p>
+</body>
+</html>

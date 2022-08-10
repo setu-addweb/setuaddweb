@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function myfun(){
+
+            var num1 =parseInt( document.getElementById('myNo').value);
+            var num2 =parseInt(document.getElementById('myNo1').value);
+            var choice = parseInt(document.getElementById('mynum1').value);
+
+            switch(choice){
+                    case 1:
+                        x = num1+num2;
+                        document.write("sum is:"+x);
+                         break;
+                    case 2:
+                        x = num1-num2;
+                        document.write("Subtraction is:"+x);
+                        break;
+
+                    case 3:
+                        x = num1*num2;
+                        document.write("Multiplication is:"+x);
+                        break;
+
+                    case 4:
+                        x = num1/num2;
+                        document.write("Division  is:"+x);
+                        break;
+
+                    case 5:
+                        x = num1%num2;
+                        document.write("Modulus  is:"+x);
+                        break;
+                  
+            }
+        }
+    </script>
+
+<p>Enter the A: <input type="text" name="text" id="myNo"></p>
+<p>Enter the B: <input type="text" name="text" id="myNo1"></p>
+<p>Enter the choice: <input type="text" name="text" id="mynum1"></p>
+<p><button onclick="myfun()">Clickme!</button></p>
+<p id="result"></p>
+</body>
+</html>

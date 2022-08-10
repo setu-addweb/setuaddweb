@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>secound</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function myfunction(){
+            let hr,min,sec,time1,time2,time;
+            hr = 2;
+            min=10;
+            sec=5;
+            time1 = Math.floor(hr*3600);
+            time2 = Math.floor(min*60);
+            time = time1+time2+sec;
+            document.getElementById("result").innerHTML = "total seconds="+time
+        }
+    </script>
+     <h1>total seconds</h1>
+     <button onclick="myfunction()">click me</button>
+     <p id="result"></p>
+</body>
+</html>

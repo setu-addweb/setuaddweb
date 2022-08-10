@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUM</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        function sum() {
+        let n = document.getElementById('myNo').value
+        let sum = 0,m;
+        while(n>0)    
+        {    
+        m=Math.floor(n%10);    
+        sum=sum+m;    
+        n=Math.floor(n/10);    
+        }   
+
+        document.getElementById('result').innerHTML = "sum is"+sum;
+         
+        }
+ </script>
+   <p>Enter the A: <input type="text" name="text" id="myNo"></p>
+   <p><button onclick="sum()">Clickme!</button></p>
+   <p id="result"></p>
+</body>
+</html>

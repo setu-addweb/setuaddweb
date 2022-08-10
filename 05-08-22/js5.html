@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conis into rs</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function myfunction(){
+            let amount = document.getElementById('myNo').value;
+            
+           
+            var  a50,c25,e20,g10,i5,k2,m1;
+            a50=amount/2;
+           
+            var c25=amount/4;
+           
+            var e20=amount/5;
+            
+            var g10=amount/10;
+           
+            var i5=amount/20;
+           
+            var k2=amount/50;
+          
+            var m1=amount/100;
+           
+            
+        
+            document.getElementById('result').innerHTML = ("Rupees of Number of 50ps coins :" +a50 + "<br>Rupees of Number of 25ps coins :" + c25 + "<br>Rupees of Number of 20ps coins :" + e20 + "<br> Rupees of Number of 10ps coins :" + g10 + "<br>Rupees of Number of 5ps coins :" + i5 + "<br>Rupees of Number of 2ps coins :" + k2 + "<br>Rupees of Number of 1ps coins :" + m1);
+        }
+    </script>
+
+    <p>Enter the conis: <input type="text" name="text" id="myNo"></p>
+    
+
+    <p><button onclick="myfunction()">Clickme!</button></p>
+    <p id="result"></p>
+</body>
+</html>

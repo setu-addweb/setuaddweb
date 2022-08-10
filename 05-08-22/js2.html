@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>programs </title>
+
+    <script type="text/javascript">
+
+           function timeConvert() {
+            let num = document.getElementById('myNo').value;
+             var hours = Math.floor(num/ 3600);
+             var minutes = Math.floor(num % 3600/ 60);
+             var seconds = Math.floor(num % 3600% 60) ;
+
+             document.getElementById('result').innerHTML = "(" + hours + "Hours &" + minutes+ "Minutes &"+seconds + "Secounds )"
+            
+           }
+    </script>
+</head>
+<body>
+   
+    <p>Enter the total numbers of seconds: <input type="text" name="text" id="myNo"></p>
+
+    <p><button onclick="timeConvert()">Clickme!</button></p>
+    <p id="result"></p>
+</body>
+</html>

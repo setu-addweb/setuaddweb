@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>surface and volume</title>
+        <script type="text/javascript">
+            function sur() {
+                 let surface_area,volume;
+                 radius = parseFloat(document.getElementById("myNo").value);
+                 surface_area = parseFloat(4 * 3.14 * radius * radius); 
+                 volume = parseFloat(4/3 * 3.14 * radius * radius * radius);
+                
+               
+    
+
+                document.getElementById("abc").innerHTML = "Surface is: "+ surface_area+"volume is:"+volume;
+            }
+
+            
+        </script>
+
+    </head>
+
+    <body>
+        <p>Enter the A: <input type="text" name="text" id="myNo"></p>
+        <p><button onclick="sur()">Clickme!</button></p>
+        <b id="abc">
+    
+        </b>
+    </body>
+</html>

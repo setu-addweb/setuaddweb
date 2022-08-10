@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>area </title>
+        <script type="text/javascript">
+            function area() {
+                let area,ci;
+                let PI = parseFloat(3.14);
+                 radius = parseInt(document.getElementById('myNo').value) ;
+                 area = parseFloat(PI*radius*radius);
+                 ci = parseFloat(2*PI*radius);
+
+                document.getElementById("abc").innerHTML = "area is: "+ area +"<br>Circumference :"+ci;
+            }
+
+            
+        </script>
+
+    </head>
+
+    <body>
+        <p>Enter the A: <input type="text" name="text" id="myNo"></p>
+        <p><button onclick="area()">Clickme!</button></p>
+        <b id="abc">
+    
+        </b>
+    </body>
+</html>

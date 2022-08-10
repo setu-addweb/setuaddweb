@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profit and loss</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        function profit() {
+        let cp= document.getElementById('myNo').value
+        let sp = document.getElementById('myNo1').value
+         let pf,ls;
+        if(sp>cp)
+        {
+            pf = sp-cp;
+           
+        }
+        else if(cp>sp)
+        {
+            ls = cp-sp;
+            
+        }
+
+        document.getElementById('result').innerHTML = "profit is "+pf+"<br>Loss is "+ls;
+         
+        }
+ </script>
+   <p>Enter the cost price: <input type="text" name="text" id="myNo"></p>
+   <p>Enter the selling price: <input type="text" name="text" id="myNo1"></p>
+   <p><button onclick="profit()">Clickme!</button></p>
+   <p id="result"></p>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maximum</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function myfunction(){
+            let num1 = document.getElementById('myNo').value;
+            let num2 = document.getElementById('myNo1').value;
+            let num3 = document.getElementById('myNo2').value;
+            let largest;
+            let secondlargest ;
+            if(num1>=num2 && num1>=num3){
+                if(num2>num3){
+                    secondlargest = num2;
+                }
+                else{
+                    secondlargest = num3;
+                }
+            }
+            else if(num2>=num1 && num2>=num3){
+                if(num1>num3){
+                    secondlargest = num1;
+                }
+                else{
+                    secondlargest = num3;
+                }
+            }
+            else if(num1>num2){
+                secondlargest = num1;
+            }
+            else{
+                secondlargest = num2;
+            }
+            
+            document.getElementById('result').innerHTML="The smallest number is "+secondlargest;
+    }
+    </script>
+     <p>Enter the X: <input type="text" name="text" id="myNo"></p>
+     <p>Enter the Y: <input type="text" name="text" id="myNo1"></p>
+    
+     <p>Enter the Z: <input type="text" name="text" id="myNo2"></p>
+    
+
+    <p><button onclick="myfunction()">Clickme!</button></p>
+    <p id="result"></p>
+</body>
+</html>

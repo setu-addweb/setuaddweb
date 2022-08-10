@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>pattern</title>
+        <script type="text/javascript">
+            function pattern() {
+              let i ,j,k=1;
+
+              for(i=1;i<=5;i++)
+              {
+                for(j=1;j<=i;j++){
+                    document.write(((k++)%2)+" ")
+                }
+                document.write("<br>")
+              }
+            }
+
+            
+        </script>
+
+    </head>
+
+    <body>
+        <p><button onclick="pattern()">Clickme!</button></p>
+        <b id="abc">
+    
+        </b>
+    </body>
+</html>
+<!--1
+    01
+    010
+    1010
+    10101-->

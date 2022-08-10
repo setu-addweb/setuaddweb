@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>temperature</title>
+        <script type="text/javascript">
+            function temperature() {
+                let c ,f;
+                
+                 f = parseInt(document.getElementById('myNo').value) ;
+                 c = parseFloat((5*( f-32))/9);
+                 
+
+                document.getElementById("abc").innerHTML = "temperature in Celsius: "+ c;
+            }
+
+            
+        </script>
+
+    </head>
+
+    <body>
+        <p>Enter the A: <input type="text" name="text" id="myNo"></p>
+        <p><button onclick="temperature()">Clickme!</button></p>
+        <b id="abc">
+    
+        </b>
+    </body>
+</html>

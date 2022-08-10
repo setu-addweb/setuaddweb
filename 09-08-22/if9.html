@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>armstrong</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function myfun(){
+            let num1 =document.getElementById('myNo').value;
+            let num2 =document.getElementById('myNo1').value;
+            let num3 =document.getElementById('myNo2').value;
+            let num4 =document.getElementById('myNo3').value;
+        
+            document.write(num1>=num2 && num1>=num3  &&  num1 >= num4 ?"<br>the largest number is"+num1 : " " ) ;
+          
+            document.write(num2 >= num1 && num2 >= num3  &&  num2 >= num4 ?"<br>the largest number is"+num2 : " " );
+           
+            document.write(num3 >= num1 && num3 >= num2  &&  num3 >= num4 ?"<br>the largest number is"+num3 : "" ) ;
+        
+            document.write(num4 >= num1 && num4 >= num2 &&  num4 >= num3?"<br>the largest number is" +num4: " " ) ;
+
+            document.write(num1<=num2 && num1<=num3  &&  num1 <= num4 ?"<br>the smallest number is"+num1 : " " ) ;
+          
+            document.write(num2 <= num1 && num2 <= num3  &&  num2 <= num4 ?"<br>the smallest number is"+num2 : " " );
+            
+            document.write(num3 <= num1 && num3 <= num2  &&  num3 <= num4 ?"<br>the smallest number is"+num3 : "" ) ;
+        
+            document.write(num4 <= num1 && num4 <= num2 &&  num4 <= num3?"<br>the smallest number is" +num4: " " ) ;
+        }
+    </script>
+     <p>Enter the A: <input type="text" name="text" id="myNo"></p>
+     <p>Enter the B: <input type="text" name="text" id="myNo1"></p>
+     <p>Enter the C: <input type="text" name="text" id="myNo2"></p>
+     <p>Enter the D: <input type="text" name="text" id="myNo3"></p>
+
+     <p><button onclick="myfun()">Clickme!</button></p>
+     <p id="result"></p>
+</body>
+</html>
