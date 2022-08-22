@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function* myGenFn() {
+        yield 1;
+        yield 2;
+        yield 3;
+        return 4;
+        }
+        
+        let myGen = myGenFn(); // This creates a generator.
+        console.log(myGen.next()); // {value: 1, done: false}
+        console.log(myGen.next()); // {value: 2, done: false}
+        console.log(myGen.next()); // {value: 3, done: false}
+        console.log(myGen.next()); // {value: 4, done: true}
+        
+        for (const n of myGenFn()) {
+        // This outputs 1, then 2, then 3 ,but not 4 because done is true for this value.
+        console.log(n);
+        }
+
+    </script>
+</body>
+</html>

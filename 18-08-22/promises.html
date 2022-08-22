@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>promises preacties</title>
+    <script>
+       /* let complete = true;
+
+        let prom = new Promise(function(resolve, reject){
+            if(complete){
+                resolve("I am successful.");
+            }else{
+                reject("I am failed.");
+            }
+        });
+
+        console.log(prom);*/
+        function prom(complete){
+            return new Promise(function(resolve, reject){ 
+                if(complete){
+                    resolve("I am successful");
+                }else{
+                    reject("Iam failed");
+                }
+
+            });
+        }
+
+        let onfulfilment = (result) => {
+            console.log(result);
+        }
+
+        let onRejection = (error) => {
+            console.log(error);
+        }
+
+        prom(false).then(onfulfilment);
+        prom(false).catch(onRejection);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

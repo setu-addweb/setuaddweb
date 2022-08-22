@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+      /* let reg = /setu/;
+        reg = /setu/g;
+         reg = /setu/i;
+        console.log(reg);
+        console.log(reg.source);
+
+        let s = "this is setu patel and setu ";
+       // 1. exec() function
+        let result = reg.exec(s);
+        //console.log(result);
+
+       // result = reg.exec(s);
+        //console.log(result);
+       // result = reg.exec(s);
+       // console.log(result);
+       //console.log(result.input);
+       //console.log(result.index);
+
+       //2. text() function -- returns true or false
+        let result2 = reg.test(s);
+         //console.log(result2); //this will only true if  the "reg" is there in string otherwise return falus.
+      
+       // 3. match() function -- retrn  an array of results or null
+       let result3 = s.match(reg); //right syntext
+       //let result3 = reg.match(s); //worng syntext
+       //console.log(result3);
+ 
+       //4. serch() function -- returns index of first match else -1
+       let result4 =  s.search(reg);
+       //console.log(result4);
+
+       //5 . replace() function -- returns new replaced string with all the replacements
+       let result5 = s.replace(reg,'SETU');
+      // console.log(result5); */
+
+     //------------------------------------------------------------------------------------------ 
+      
+     /* let regx = /setu/;
+
+      // lets look into some metacharacter symbols
+
+      regx = /^se/; //^means expression will match if sting starts
+
+      regx = /tu$/; // end with string 
+
+      regx = /s.tu/;// matches any one charater
+      regx = /s*tu/;// matches any 0 or more charaters
+      regx = /se?tuj?/;// ? after character means that character is optional
+      regx = /s\*etu/ // if in string is s*etu then only this is match other wise no match
+      let s = "setu is setu";
+      let result6 = regx.exec(s);
+      console.log("the result from exec is",result6);
+
+      if(regx.test(s)){
+        console.log(`the string ${s} mtches the expression ${regx.source}`);
+      }
+      else{
+        console.log(`the string ${s}does not  mtches the expression ${regx.source}`);
+      }  */
+
+      //------------------------------------------------------------------------------------------------------
+
+     // const regx = /^s/i;
+
+     //        character sets  -- we use []    //
+      let regx = /s[a-z]tu/;// can be any charater from a to z
+      regx = /s[ety]tu/;// can be an e,t or y 
+      regx = /s[^ety]tu/;// can not  be any of  e,t or y  in[^ety]
+      regx = /s[^ety]t[ust]/;// can not  be any of  e,t or y  in[^ety] + can be u,s,or t
+      regx = /s[a-zA-Z]t[ust0-9][0-9]/;// in [a-zA-Z] valid for any charater in upper case lower case ,[ust0-9] valid for u,s,t or 0 to 9 after this requied [0-9] in last
+
+
+      //quantifiers - we use {}
+
+      regx = /set{2}u/; // t can occur exactly 2 times
+      regx = /set{0,2}u/; // t can occur exactly 0 to 2(0 or 1,2) times
+      let s = "setttu patel";
+
+      // grouping - we use ()
+      regx = /(set){2}([0-9]r){3}/; 
+       s = "setset1r4r5r";
+
+      let result = regx.exec(s);
+      console.log("the result from exec is",result);
+
+      if(regx.test(s)){
+        console.log(`the string ${s} mtches the expression ${regx.source}`);
+      }
+      else{
+        console.log(`the string ${s}does not  mtches the expression ${regx.source}`);
+      } 
+
+
+    </script>
+</body>
+</html>
