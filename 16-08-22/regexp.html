@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>regular expression</title>
 </head>
 <body>
     <script type="text/javascript">
@@ -17,31 +17,31 @@
         let s = "this is setu patel and setu ";
        // 1. exec() function
         let result = reg.exec(s);
-        //console.log(result);
+        console.log(result);
 
        // result = reg.exec(s);
-        //console.log(result);
-       // result = reg.exec(s);
-       // console.log(result);
-       //console.log(result.input);
-       //console.log(result.index);
+       console.log(result);
+       result = reg.exec(s);
+       console.log(result);
+       console.log(result.input);
+       console.log(result.index);
 
        //2. text() function -- returns true or false
         let result2 = reg.test(s);
-         //console.log(result2); //this will only true if  the "reg" is there in string otherwise return falus.
+         console.log(result2); //this will only true if  the "reg" is there in string otherwise return falus.
       
        // 3. match() function -- retrn  an array of results or null
        let result3 = s.match(reg); //right syntext
        //let result3 = reg.match(s); //worng syntext
-       //console.log(result3);
+       console.log(result3);
  
        //4. serch() function -- returns index of first match else -1
        let result4 =  s.search(reg);
-       //console.log(result4);
+       console.log(result4);
 
        //5 . replace() function -- returns new replaced string with all the replacements
        let result5 = s.replace(reg,'SETU');
-      // console.log(result5); */
+       console.log(result5); */
 
      //------------------------------------------------------------------------------------------ 
       
