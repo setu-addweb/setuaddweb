@@ -1,0 +1,1096 @@
+2)
+
+MariaDB [practice2]> select E_Name from employee_details;
++----------+
+| E_Name   |
++----------+
+| setu     |
+| prachi   |
+| sweety   |
+| shruti   |
+| sanket   |
+| surbhi   |
+| jaymin   |
+| pooja    |
+| pravina  |
+| kinjal   |
+| reena    |
+| vidhi    |
+| nikita   |
+| bhumika  |
+| bhumika  |
+| sonali   |
+| darshita |
+| jarni    |
+| joy      |
+| jay      |
+| jaynam   |
+| harsh    |
+| smit     |
+| smita    |
+| shayam   |
+| nidhi    |
+| swati    |
+| riya     |
+| roshan   |
+| roshani  |
+| uvesh    |
+| laxita   |
+| manshi   |
+| urvish   |
+| kamaxi   |
+| anjali   |
+| megha    |
+| happy    |
++----------+
+38 rows in set (0.001 sec)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3)
+MariaDB [practice2]> select E_Name,Job_Title from employee_details;
++----------+-------------------+
+| E_Name   | Job_Title         |
++----------+-------------------+
+| setu     | developer         |
+| prachi   | developer         |
+| sweety   | developer         |
+| shruti   | developer         |
+| sanket   | developer         |
+| surbhi   | developer         |
+| jaymin   | developer         |
+| pooja    | Manager           |
+| pravina  | Manager           |
+| kinjal   | Manager           |
+| reena    | Project_codinater |
+| vidhi    | Project_codinater |
+| nikita   | Project_codinater |
+| bhumika  | Project_codinater |
+| bhumika  | project_codinater |
+| sonali   | project_codinater |
+| darshita | project_codinater |
+| jarni    | developer         |
+| joy      | developer         |
+| jay      | clerk             |
+| jaynam   | clerk             |
+| harsh    | clerk             |
+| smit     | clerk             |
+| smita    | clerk             |
+| shayam   | HR                |
+| nidhi    | HR                |
+| swati    | HR                |
+| riya     | HR                |
+| roshan   | designer          |
+| roshani  | designer          |
+| uvesh    | designer          |
+| laxita   | designer          |
+| manshi   | designer          |
+| urvish   | designer          |
+| kamaxi   | designer          |
+| anjali   | system_admin      |
+| megha    | system_admin      |
+| happy    | system_admin      |
++----------+-------------------+
+38 rows in set (0.001 sec)
+=====================================================================================================================================================================================================
+4)
+MariaDB [practice2]> select E_Name,Salary from employee_details;
++----------+--------+
+| E_Name   | Salary |
++----------+--------+
+| setu     |  30000 |
+| prachi   |  35000 |
+| sweety   |  60000 |
+| shruti   |  25000 |
+| sanket   |  42000 |
+| surbhi   |  22000 |
+| jaymin   |  12000 |
+| pooja    |  20000 |
+| pravina  |  25000 |
+| kinjal   |  15000 |
+| reena    |  23500 |
+| vidhi    |  33500 |
+| nikita   |  13500 |
+| bhumika  |  23500 |
+| bhumika  |  20500 |
+| sonali   |  27500 |
+| darshita |  27500 |
+| jarni    |  25000 |
+| joy      |  25000 |
+| jay      |  21000 |
+| jaynam   |  23800 |
+| harsh    |  33800 |
+| smit     |  13800 |
+| smita    |  23800 |
+| shayam   |  22800 |
+| nidhi    |  29800 |
+| swati    |  39800 |
+| riya     |  21800 |
+| roshan   |  21800 |
+| roshani  |  11800 |
+| uvesh    |  12900 |
+| laxita   |  29000 |
+| manshi   |  39000 |
+| urvish   |  19000 |
+| kamaxi   |  23000 |
+| anjali   |  23000 |
+| megha    |  26000 |
+| happy    |  29000 |
++----------+--------+
+38 rows in set (0.001 sec)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+5)
+MariaDB [practice2]> select E_Name,Salary from employee_details;
++----------+--------+
+| E_Name   | Salary |
++----------+--------+
+| setu     |  30000 |
+| prachi   |  35000 |
+| sweety   |  60000 |
+| shruti   |  25000 |
+| sanket   |  42000 |
+| surbhi   |  22000 |
+| jaymin   |  12000 |
+| pooja    |  20000 |
+| pravina  |  25000 |
+| kinjal   |  15000 |
+| reena    |  23500 |
+| vidhi    |  33500 |
+| nikita   |  13500 |
+| bhumika  |  23500 |
+| bhumika  |  20500 |
+| sonali   |  27500 |
+| darshita |  27500 |
+| jarni    |  25000 |
+| joy      |  25000 |
+| jay      |  21000 |
+| jaynam   |  23800 |
+| harsh    |  33800 |
+| smit     |  13800 |
+| smita    |  23800 |
+| shayam   |  22800 |
+| nidhi    |  29800 |
+| swati    |  39800 |
+| riya     |  21800 |
+| roshan   |  21800 |
+| roshani  |  11800 |
+| uvesh    |  12900 |
+| laxita   |  29000 |
+| manshi   |  39000 |
+| urvish   |  19000 |
+| kamaxi   |  23000 |
+| anjali   |  23000 |
+| megha    |  26000 |
+| happy    |  29000 |
++----------+--------+
+38 rows in set (0.001 sec)
+````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+6)
+MariaDB [practice2]> select E_Name,Salary*12 from employee_details;
++----------+-----------+
+| E_Name   | Salary*12 |
++----------+-----------+
+| setu     |    360000 |
+| prachi   |    420000 |
+| sweety   |    720000 |
+| shruti   |    300000 |
+| sanket   |    504000 |
+| surbhi   |    264000 |
+| jaymin   |    144000 |
+| pooja    |    240000 |
+| pravina  |    300000 |
+| kinjal   |    180000 |
+| reena    |    282000 |
+| vidhi    |    402000 |
+| nikita   |    162000 |
+| bhumika  |    282000 |
+| bhumika  |    246000 |
+| sonali   |    330000 |
+| darshita |    330000 |
+| jarni    |    300000 |
+| joy      |    300000 |
+| jay      |    252000 |
+| jaynam   |    285600 |
+| harsh    |    405600 |
+| smit     |    165600 |
+| smita    |    285600 |
+| shayam   |    273600 |
+| nidhi    |    357600 |
+| swati    |    477600 |
+| riya     |    261600 |
+| roshan   |    261600 |
+| roshani  |    141600 |
+| uvesh    |    154800 |
+| laxita   |    348000 |
+| manshi   |    468000 |
+| urvish   |    228000 |
+| kamaxi   |    276000 |
+| anjali   |    276000 |
+| megha    |    312000 |
+| happy    |    348000 |
++----------+-----------+
+38 rows in set (0.001 sec)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^6
+7)
+
+MariaDB [practice2]> select E_Name from employee_details where Dep_No=3;
++--------+
+| E_Name |
++--------+
+| setu   |
+| prachi |
+| sweety |
+| shruti |
+| sanket |
+| surbhi |
+| jaymin |
+| jarni  |
+| joy    |
++--------+
+9 rows in set (0.001 sec)
+1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+8)
+MariaDB [practice2]> select E_Name from employee_details where Job_Title = 'clerk' and salary>3000;
++--------+
+| E_Name |
++--------+
+| jay    |
+| jaynam |
+| harsh  |
+| smit   |
+| smita  |
++--------+
+5 rows in set (0.001 sec)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9)
+MariaDB [practice2]> select E_Name,Dep_No from employee_details where Commision = 'yes';
++---------+--------+
+| E_Name  | Dep_No |
++---------+--------+
+| setu    |      3 |
+| sweety  |      3 |
+| sanket  |      3 |
+| surbhi  |      3 |
+| pravina |      1 |
+| kinjal  |      1 |
+| nikita  |      5 |
+| bhumika |      5 |
+| bhumika |      5 |
+| jarni   |      3 |
+| jaynam  |      2 |
+| smita   |      2 |
+| shayam  |      6 |
+| nidhi   |      6 |
+| uvesh   |      4 |
+| laxita  |      4 |
+| manshi  |      4 |
+| urvish  |      4 |
+| happy   |      7 |
++---------+--------+
+19 rows in set (0.001 sec)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+10)
+MariaDB [practice2]> select E_Name from employee_details where Commision = 'no';
++----------+
+| E_Name   |
++----------+
+| prachi   |
+| shruti   |
+| jaymin   |
+| pooja    |
+| reena    |
+| vidhi    |
+| sonali   |
+| darshita |
+| joy      |
+| jay      |
+| harsh    |
+| smit     |
+| swati    |
+| riya     |
+| roshan   |
+| roshani  |
+| kamaxi   |
+| anjali   |
+| megha    |
++----------+
+19 rows in set (0.001 sec)
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+11)
+MariaDB [practice2]> select E_Name from employee_details where Job_Title in ('clerk','HR','developer') and salary>3000;
++--------+
+| E_Name |
++--------+
+| setu   |
+| prachi |
+| sweety |
+| shruti |
+| sanket |
+| surbhi |
+| jaymin |
+| jarni  |
+| joy    |
+| jay    |
+| jaynam |
+| harsh  |
+| smit   |
+| smita  |
+| shayam |
+| nidhi  |
+| swati  |
+| riya   |
++--------+
+18 rows in set (0.001 sec)
+*******************************************************************************************************************************************************************
+13)
+MariaDB [practice2]> select E_Name,Join_Date from employee_details where  Join_Date < '30-2-10' or Join_Date>'31-12-15';
++----------+------------+
+| E_Name   | Join_Date  |
++----------+------------+
+| setu     | 2021-07-15 |
+| prachi   | 2027-07-12 |
+| sweety   | 2017-06-12 |
+| shruti   | 0007-04-10 |
+| sanket   | 0001-01-17 |
+| surbhi   | 2018-05-12 |
+| jaymin   | 0008-09-10 |
+| pooja    | 0003-03-13 |
+| pravina  | 0002-04-12 |
+| kinjal   | 0004-06-17 |
+| reena    | 0005-05-11 |
+| vidhi    | 0001-08-10 |
+| nikita   | 2021-03-09 |
+| bhumika  | 2020-01-08 |
+| bhumika  | 2002-02-12 |
+| sonali   | 2012-09-18 |
+| darshita | 2012-09-17 |
+| jarni    | 2011-02-12 |
+| joy      | 2021-06-11 |
+| jay      | 2021-06-21 |
+| harsh    | 2022-04-08 |
+| smit     | 2021-07-05 |
+| smita    | 2021-05-12 |
+| shayam   | 2021-05-12 |
+| nidhi    | 0001-05-10 |
+| swati    | 0005-07-17 |
+| riya     | 2015-01-11 |
+| roshan   | 2015-01-11 |
+| roshani  | 0001-12-11 |
+| uvesh    | 0001-02-09 |
+| laxita   | 2019-02-07 |
+| manshi   | 2021-02-17 |
+| urvish   | 2021-02-12 |
+| kamaxi   | 0001-02-14 |
+| anjali   | 0003-02-14 |
+| megha    | 2012-07-11 |
+| happy    | 0002-07-01 |
++----------+------------+
+37 rows in set (0.001 sec)
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+18)
+MariaDB [practice2]> select E_Name,Job_Title,Dep_No from employee_details where Job_Title in ('clerk','HR','developer') and Dep_No in (2,3,6);
++--------+-----------+--------+
+| E_Name | Job_Title | Dep_No |
++--------+-----------+--------+
+| setu   | developer |      3 |
+| prachi | developer |      3 |
+| sweety | developer |      3 |
+| shruti | developer |      3 |
+| sanket | developer |      3 |
+| surbhi | developer |      3 |
+| jaymin | developer |      3 |
+| jarni  | developer |      3 |
+| joy    | developer |      3 |
+| jay    | clerk     |      2 |
+| jaynam | clerk     |      2 |
+| harsh  | clerk     |      2 |
+| smit   | clerk     |      2 |
+| smita  | clerk     |      2 |
+| shayam | HR        |      6 |
+| nidhi  | HR        |      6 |
+| swati  | HR        |      6 |
+| riya   | HR        |      6 |
++--------+-----------+--------+
+18 rows in set (0.001 sec)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+19)
+MariaDB [practice2]> select E_Name from employee_details
+    ->  WHERE E_Name LIKE 'S%';
++--------+
+| E_Name |
++--------+
+| setu   |
+| sweety |
+| shruti |
+| sanket |
+| surbhi |
+| sonali |
+| smit   |
+| smita  |
+| shayam |
+| swati  |
++--------+
+10 rows in set (0.001 sec)
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+20)
+MariaDB [practice2]> select E_Name from employee_details  WHERE E_Name LIKE '%_';
++----------+
+| E_Name   |
++----------+
+| setu     |
+| prachi   |
+| sweety   |
+| shruti   |
+| sanket   |
+| surbhi   |
+| jaymin   |
+| pooja    |
+| pravina  |
+| kinjal   |
+| reena    |
+| vidhi    |
+| nikita   |
+| bhumika  |
+| bhumika  |
+| sonali   |
+| darshita |
+| jarni    |
+| joy      |
+| jay      |
+| jaynam   |
+| harsh    |
+| smit     |
+| smita    |
+| shayam   |
+| nidhi    |
+| swati    |
+| riya     |
+| roshan   |
+| roshani  |
+| uvesh    |
+| laxita   |
+| manshi   |
+| urvish   |
+| kamaxi   |
+| anjali   |
+| megha    |
+| happy    |
++----------+
+38 rows in set (0.001 sec)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4
+21)
+MariaDB [practice2]> select E_Name from employee_details  WHERE E_Name LIKE '_A%';
++----------+
+| E_Name   |
++----------+
+| sanket   |
+| jaymin   |
+| darshita |
+| jarni    |
+| jay      |
+| jaynam   |
+| harsh    |
+| laxita   |
+| manshi   |
+| kamaxi   |
+| happy    |
++----------+
+11 rows in set (0.001 sec)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+22)
+MariaDB [practice2]> select E_Name from employee_details  WHERE E_Name LIKE '_____';
++--------+
+| E_Name |
++--------+
+| pooja  |
+| reena  |
+| vidhi  |
+| jarni  |
+| harsh  |
+| smita  |
+| nidhi  |
+| swati  |
+| uvesh  |
+| megha  |
+| happy  |
++--------+
+11 rows in set (0.001 sec)
+
+____________________________________________________________________________________________________________________________________________________
+23)
+MariaDB [practice2]> select E_Name,Job_Title from employee_details where Job_Title not in ('Manager');
++----------+-------------------+
+| E_Name   | Job_Title         |
++----------+-------------------+
+| setu     | developer         |
+| prachi   | developer         |
+| sweety   | developer         |
+| shruti   | developer         |
+| sanket   | developer         |
+| surbhi   | developer         |
+| jaymin   | developer         |
+| reena    | Project_codinater |
+| vidhi    | Project_codinater |
+| nikita   | Project_codinater |
+| bhumika  | Project_codinater |
+| bhumika  | project_codinater |
+| sonali   | project_codinater |
+| darshita | project_codinater |
+| jarni    | developer         |
+| joy      | developer         |
+| jay      | clerk             |
+| jaynam   | clerk             |
+| harsh    | clerk             |
+| smit     | clerk             |
+| smita    | clerk             |
+| shayam   | HR                |
+| nidhi    | HR                |
+| swati    | HR                |
+| riya     | HR                |
+| roshan   | designer          |
+| roshani  | designer          |
+| uvesh    | designer          |
+| laxita   | designer          |
+| manshi   | designer          |
+| urvish   | designer          |
+| kamaxi   | designer          |
+| anjali   | system_admin      |
+| megha    | system_admin      |
+| happy    | system_admin      |
++----------+-------------------+
+35 rows in set (0.001 sec)
+??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+24)
+MariaDB [practice2]> select E_Name,Job_Title from employee_details where Job_Title not in ('clerk','Project_codinater');
++---------+--------------+
+| E_Name  | Job_Title    |
++---------+--------------+
+| setu    | developer    |
+| prachi  | developer    |
+| sweety  | developer    |
+| shruti  | developer    |
+| sanket  | developer    |
+| surbhi  | developer    |
+| jaymin  | developer    |
+| pooja   | Manager      |
+| pravina | Manager      |
+| kinjal  | Manager      |
+| jarni   | developer    |
+| joy     | developer    |
+| shayam  | HR           |
+| nidhi   | HR           |
+| swati   | HR           |
+| riya    | HR           |
+| roshan  | designer     |
+| roshani | designer     |
+| uvesh   | designer     |
+| laxita  | designer     |
+| manshi  | designer     |
+| urvish  | designer     |
+| kamaxi  | designer     |
+| anjali  | system_admin |
+| megha   | system_admin |
+| happy   | system_admin |
++---------+--------------+
+26 rows in set (0.001 sec)
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@22
+26)
+MariaDB [practice2]> select Count(E_Name) from employee_details;
++---------------+
+| Count(E_Name) |
++---------------+
+|            38 |
++---------------+
+1 row in set (0.001 sec)
+-------------------------------------------------------------------------------------------------------------
+27)
+
+MariaDB [practice2]> select sum(Salary) from employee_details;
++-------------+
+| sum(Salary) |
++-------------+
+|      970400 |
++-------------+
+1 row in set (0.001 sec)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+28)
+MariaDB [practice2]> select max(Salary) from employee_details;
++-------------+
+| max(Salary) |
++-------------+
+|       60000 |
++-------------+
+1 row in set (0.001 sec)
+(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((99999
+29)
+MariaDB [practice2]> select min(Salary) from employee_details;
++-------------+
+| min(Salary) |
++-------------+
+|       11800 |
++-------------+
+1 row in set (0.001 sec)
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+30)
+
+MariaDB [practice2]> select Avg(Salary) from employee_details;
++-------------+
+| Avg(Salary) |
++-------------+
+|  25536.8421 |
++-------------+
+1 row in set (0.001 sec)
+################################################################################################3
+31)
+MariaDB [practice2]> select max(Salary) from employee_details where Job_Title = 'clerk' ;
++-------------+
+| max(Salary) |
++-------------+
+|       33800 |
++-------------+
+1 row in set (0.001 sec)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%555
+32)
+MariaDB [practice2]> select max(Salary) from employee_details where Dep_No = 3 ;
++-------------+
+| max(Salary) |
++-------------+
+|       60000 |
++-------------+
+1 row in set (0.001 sec)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+33)
+MariaDB [practice2]> select min(Salary) from employee_details where Job_Title = 'clerk' ;
++-------------+
+| min(Salary) |
++-------------+
+|       13800 |
++-------------+
+1 row in set (0.001 sec)
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+34)
+MariaDB [practice2]> select Avg(Salary) from employee_details where Job_Title = 'Manager' ;
++-------------+
+| Avg(Salary) |
++-------------+
+|  20000.0000 |
++-------------+
+1 row in set (0.001 sec)
+?????????????????????????????????????????????????????????????????????????????????????
+35)
+MariaDB [practice2]> select sum(Salary) from employee_details where Job_title = 'developer' and Dep_No = 3;
++-------------+
+| sum(Salary) |
++-------------+
+|      276000 |
++-------------+
+1 row in set (0.001 sec)
+///////////////////////////////////////////////////////////////////////////////////////////
+36)
+MariaDB [practice2]>  SELECT * FROM employee_details ORDER BY' name' asc,salary;
++----+----------+--------+--------+-------------------+------------+-----------+
+| ID | E_Name   | Dep_NO | Salary | Job_Title         | Join_Date  | Commision |
++----+----------+--------+--------+-------------------+------------+-----------+
+| 30 | roshani  |      4 |  11800 | designer          | 0001-12-11 | no        |
+|  7 | jaymin   |      3 |  12000 | developer         | 0008-09-10 | No        |
+| 31 | uvesh    |      4 |  12900 | designer          | 0001-02-09 | yes       |
+| 13 | nikita   |      5 |  13500 | Project_codinater | 2021-03-09 | yes       |
+| 23 | smit     |      2 |  13800 | clerk             | 2021-07-05 | no        |
+| 10 | kinjal   |      1 |  15000 | Manager           | 0004-06-17 | yes       |
+| 34 | urvish   |      4 |  19000 | designer          | 2021-02-12 | yes       |
+|  8 | pooja    |      1 |  20000 | Manager           | 0003-03-13 | No        |
+| 15 | bhumika  |      5 |  20500 | project_codinater | 2002-02-12 | yes       |
+| 20 | jay      |      2 |  21000 | clerk             | 2021-06-21 | no        |
+| 28 | riya     |      6 |  21800 | HR                | 2015-01-11 | no        |
+| 29 | roshan   |      4 |  21800 | designer          | 2015-01-11 | no        |
+|  6 | surbhi   |      3 |  22000 | developer         | 2018-05-12 | yes       |
+| 25 | shayam   |      6 |  22800 | HR                | 2021-05-12 | yes       |
+| 35 | kamaxi   |      4 |  23000 | designer          | 0001-02-14 | no        |
+| 36 | anjali   |      7 |  23000 | system_admin      | 0003-02-14 | no        |
+| 11 | reena    |      5 |  23500 | Project_codinater | 0005-05-11 | no        |
+| 14 | bhumika  |      5 |  23500 | Project_codinater | 2020-01-08 | yes       |
+| 21 | jaynam   |      2 |  23800 | clerk             | 2031-10-11 | yes       |
+| 24 | smita    |      2 |  23800 | clerk             | 2021-05-12 | yes       |
+| 18 | jarni    |      3 |  25000 | developer         | 2011-02-12 | yes       |
+| 19 | joy      |      3 |  25000 | developer         | 2021-06-11 | no        |
+|  9 | pravina  |      1 |  25000 | Manager           | 0002-04-12 | yes       |
+|  4 | shruti   |      3 |  25000 | developer         | 0007-04-10 | no        |
+| 37 | megha    |      7 |  26000 | system_admin      | 2012-07-11 | no        |
+| 16 | sonali   |      5 |  27500 | project_codinater | 2012-09-18 | no        |
+| 17 | darshita |      5 |  27500 | project_codinater | 2012-09-17 | no        |
+| 32 | laxita   |      4 |  29000 | designer          | 2019-02-07 | yes       |
+| 38 | happy    |      7 |  29000 | system_admin      | 0002-07-01 | yes       |
+| 26 | nidhi    |      6 |  29800 | HR                | 0001-05-10 | yes       |
+|  1 | setu     |      3 |  30000 | developer         | 2021-07-15 | yes       |
+| 12 | vidhi    |      5 |  33500 | Project_codinater | 0001-08-10 | no        |
+| 22 | harsh    |      2 |  33800 | clerk             | 2022-04-08 | no        |
+|  2 | prachi   |      3 |  35000 | developer         | 2027-07-12 | no        |
+| 33 | manshi   |      4 |  39000 | designer          | 2021-02-17 | yes       |
+| 27 | swati    |      6 |  39800 | HR                | 0005-07-17 | no        |
+|  5 | sanket   |      3 |  42000 | developer         | 0001-01-17 | yes       |
+|  3 | sweety   |      3 |  60000 | developer         | 2017-06-12 | yes       |
++----+----------+--------+--------+-------------------+------------+-----------+
+38 rows in set (0.001 sec)
+////////////////////////////////////////////////////////////////////////////////////////////////////
+37)
+MariaDB [practice2]> SELECT * FROM employee_details ORDER BY salary desc;
++----+----------+--------+--------+-------------------+------------+-----------+
+| ID | E_Name   | Dep_NO | Salary | Job_Title         | Join_Date  | Commision |
++----+----------+--------+--------+-------------------+------------+-----------+
+|  3 | sweety   |      3 |  60000 | developer         | 2017-06-12 | yes       |
+|  5 | sanket   |      3 |  42000 | developer         | 0001-01-17 | yes       |
+| 27 | swati    |      6 |  39800 | HR                | 0005-07-17 | no        |
+| 33 | manshi   |      4 |  39000 | designer          | 2021-02-17 | yes       |
+|  2 | prachi   |      3 |  35000 | developer         | 2027-07-12 | no        |
+| 22 | harsh    |      2 |  33800 | clerk             | 2022-04-08 | no        |
+| 12 | vidhi    |      5 |  33500 | Project_codinater | 0001-08-10 | no        |
+|  1 | setu     |      3 |  30000 | developer         | 2021-07-15 | yes       |
+| 26 | nidhi    |      6 |  29800 | HR                | 0001-05-10 | yes       |
+| 38 | happy    |      7 |  29000 | system_admin      | 0002-07-01 | yes       |
+| 32 | laxita   |      4 |  29000 | designer          | 2019-02-07 | yes       |
+| 16 | sonali   |      5 |  27500 | project_codinater | 2012-09-18 | no        |
+| 17 | darshita |      5 |  27500 | project_codinater | 2012-09-17 | no        |
+| 37 | megha    |      7 |  26000 | system_admin      | 2012-07-11 | no        |
+| 18 | jarni    |      3 |  25000 | developer         | 2011-02-12 | yes       |
+|  4 | shruti   |      3 |  25000 | developer         | 0007-04-10 | no        |
+|  9 | pravina  |      1 |  25000 | Manager           | 0002-04-12 | yes       |
+| 19 | joy      |      3 |  25000 | developer         | 2021-06-11 | no        |
+| 21 | jaynam   |      2 |  23800 | clerk             | 2031-10-11 | yes       |
+| 24 | smita    |      2 |  23800 | clerk             | 2021-05-12 | yes       |
+| 14 | bhumika  |      5 |  23500 | Project_codinater | 2020-01-08 | yes       |
+| 11 | reena    |      5 |  23500 | Project_codinater | 0005-05-11 | no        |
+| 35 | kamaxi   |      4 |  23000 | designer          | 0001-02-14 | no        |
+| 36 | anjali   |      7 |  23000 | system_admin      | 0003-02-14 | no        |
+| 25 | shayam   |      6 |  22800 | HR                | 2021-05-12 | yes       |
+|  6 | surbhi   |      3 |  22000 | developer         | 2018-05-12 | yes       |
+| 28 | riya     |      6 |  21800 | HR                | 2015-01-11 | no        |
+| 29 | roshan   |      4 |  21800 | designer          | 2015-01-11 | no        |
+| 20 | jay      |      2 |  21000 | clerk             | 2021-06-21 | no        |
+| 15 | bhumika  |      5 |  20500 | project_codinater | 2002-02-12 | yes       |
+|  8 | pooja    |      1 |  20000 | Manager           | 0003-03-13 | No        |
+| 34 | urvish   |      4 |  19000 | designer          | 2021-02-12 | yes       |
+| 10 | kinjal   |      1 |  15000 | Manager           | 0004-06-17 | yes       |
+| 23 | smit     |      2 |  13800 | clerk             | 2021-07-05 | no        |
+| 13 | nikita   |      5 |  13500 | Project_codinater | 2021-03-09 | yes       |
+| 31 | uvesh    |      4 |  12900 | designer          | 0001-02-09 | yes       |
+|  7 | jaymin   |      3 |  12000 | developer         | 0008-09-10 | No        |
+| 30 | roshani  |      4 |  11800 | designer          | 0001-12-11 | no        |
++----+----------+--------+--------+-------------------+------------+-----------+
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+38)
+MariaDB [practice2]>  SELECT * FROM employee_details ORDER BY asc,E_name;
++----+----------+--------+--------+-------------------+------------+-----------+
+| ID | E_Name   | Dep_NO | Salary | Job_Title         | Join_Date  | Commision |
++----+----------+--------+--------+-------------------+------------+-----------+
+| 36 | anjali   |      7 |  23000 | system_admin      | 0003-02-14 | no        |
+| 15 | bhumika  |      5 |  20500 | project_codinater | 2002-02-12 | yes       |
+| 14 | bhumika  |      5 |  23500 | Project_codinater | 2020-01-08 | yes       |
+| 17 | darshita |      5 |  27500 | project_codinater | 2012-09-17 | no        |
+| 38 | happy    |      7 |  29000 | system_admin      | 0002-07-01 | yes       |
+| 22 | harsh    |      2 |  33800 | clerk             | 2022-04-08 | no        |
+| 18 | jarni    |      3 |  25000 | developer         | 2011-02-12 | yes       |
+| 20 | jay      |      2 |  21000 | clerk             | 2021-06-21 | no        |
+|  7 | jaymin   |      3 |  12000 | developer         | 0008-09-10 | No        |
+| 21 | jaynam   |      2 |  23800 | clerk             | 2031-10-11 | yes       |
+| 19 | joy      |      3 |  25000 | developer         | 2021-06-11 | no        |
+| 35 | kamaxi   |      4 |  23000 | designer          | 0001-02-14 | no        |
+| 10 | kinjal   |      1 |  15000 | Manager           | 0004-06-17 | yes       |
+| 32 | laxita   |      4 |  29000 | designer          | 2019-02-07 | yes       |
+| 33 | manshi   |      4 |  39000 | designer          | 2021-02-17 | yes       |
+| 37 | megha    |      7 |  26000 | system_admin      | 2012-07-11 | no        |
+| 26 | nidhi    |      6 |  29800 | HR                | 0001-05-10 | yes       |
+| 13 | nikita   |      5 |  13500 | Project_codinater | 2021-03-09 | yes       |
+|  8 | pooja    |      1 |  20000 | Manager           | 0003-03-13 | No        |
+|  2 | prachi   |      3 |  35000 | developer         | 2027-07-12 | no        |
+|  9 | pravina  |      1 |  25000 | Manager           | 0002-04-12 | yes       |
+| 11 | reena    |      5 |  23500 | Project_codinater | 0005-05-11 | no        |
+| 28 | riya     |      6 |  21800 | HR                | 2015-01-11 | no        |
+| 29 | roshan   |      4 |  21800 | designer          | 2015-01-11 | no        |
+| 30 | roshani  |      4 |  11800 | designer          | 0001-12-11 | no        |
+|  5 | sanket   |      3 |  42000 | developer         | 0001-01-17 | yes       |
+|  1 | setu     |      3 |  30000 | developer         | 2021-07-15 | yes       |
+| 25 | shayam   |      6 |  22800 | HR                | 2021-05-12 | yes       |
+|  4 | shruti   |      3 |  25000 | developer         | 0007-04-10 | no        |
+| 23 | smit     |      2 |  13800 | clerk             | 2021-07-05 | no        |
+| 24 | smita    |      2 |  23800 | clerk             | 2021-05-12 | yes       |
+| 16 | sonali   |      5 |  27500 | project_codinater | 2012-09-18 | no        |
+|  6 | surbhi   |      3 |  22000 | developer         | 2018-05-12 | yes       |
+| 27 | swati    |      6 |  39800 | HR                | 0005-07-17 | no        |
+|  3 | sweety   |      3 |  60000 | developer         | 2017-06-12 | yes       |
+| 34 | urvish   |      4 |  19000 | designer          | 2021-02-12 | yes       |
+| 31 | uvesh    |      4 |  12900 | designer          | 0001-02-09 | yes       |
+| 12 | vidhi    |      5 |  33500 | Project_codinater | 0001-08-10 | no        |
++----+----------+--------+--------+-------------------+------------+-----------+
+38 rows in set (0.001 sec)
+***************************************************************************************
+39)
+MariaDB [practice2]>  SELECT * FROM employee_details ORDER BY' E_name' asc,E_name,Dep_No,Salary;
++----+----------+--------+--------+-------------------+------------+-----------+
+| ID | E_Name   | Dep_NO | Salary | Job_Title         | Join_Date  | Commision |
++----+----------+--------+--------+-------------------+------------+-----------+
+| 36 | anjali   |      7 |  23000 | system_admin      | 0003-02-14 | no        |
+| 15 | bhumika  |      5 |  20500 | project_codinater | 2002-02-12 | yes       |
+| 14 | bhumika  |      5 |  23500 | Project_codinater | 2020-01-08 | yes       |
+| 17 | darshita |      5 |  27500 | project_codinater | 2012-09-17 | no        |
+| 38 | happy    |      7 |  29000 | system_admin      | 0002-07-01 | yes       |
+| 22 | harsh    |      2 |  33800 | clerk             | 2022-04-08 | no        |
+| 18 | jarni    |      3 |  25000 | developer         | 2011-02-12 | yes       |
+| 20 | jay      |      2 |  21000 | clerk             | 2021-06-21 | no        |
+|  7 | jaymin   |      3 |  12000 | developer         | 0008-09-10 | No        |
+| 21 | jaynam   |      2 |  23800 | clerk             | 2031-10-11 | yes       |
+| 19 | joy      |      3 |  25000 | developer         | 2021-06-11 | no        |
+| 35 | kamaxi   |      4 |  23000 | designer          | 0001-02-14 | no        |
+| 10 | kinjal   |      1 |  15000 | Manager           | 0004-06-17 | yes       |
+| 32 | laxita   |      4 |  29000 | designer          | 2019-02-07 | yes       |
+| 33 | manshi   |      4 |  39000 | designer          | 2021-02-17 | yes       |
+| 37 | megha    |      7 |  26000 | system_admin      | 2012-07-11 | no        |
+| 26 | nidhi    |      6 |  29800 | HR                | 0001-05-10 | yes       |
+| 13 | nikita   |      5 |  13500 | Project_codinater | 2021-03-09 | yes       |
+|  8 | pooja    |      1 |  20000 | Manager           | 0003-03-13 | No        |
+|  2 | prachi   |      3 |  35000 | developer         | 2027-07-12 | no        |
+|  9 | pravina  |      1 |  25000 | Manager           | 0002-04-12 | yes       |
+| 11 | reena    |      5 |  23500 | Project_codinater | 0005-05-11 | no        |
+| 28 | riya     |      6 |  21800 | HR                | 2015-01-11 | no        |
+| 29 | roshan   |      4 |  21800 | designer          | 2015-01-11 | no        |
+| 30 | roshani  |      4 |  11800 | designer          | 0001-12-11 | no        |
+|  5 | sanket   |      3 |  42000 | developer         | 0001-01-17 | yes       |
+|  1 | setu     |      3 |  30000 | developer         | 2021-07-15 | yes       |
+| 25 | shayam   |      6 |  22800 | HR                | 2021-05-12 | yes       |
+|  4 | shruti   |      3 |  25000 | developer         | 0007-04-10 | no        |
+| 23 | smit     |      2 |  13800 | clerk             | 2021-07-05 | no        |
+| 24 | smita    |      2 |  23800 | clerk             | 2021-05-12 | yes       |
+| 16 | sonali   |      5 |  27500 | project_codinater | 2012-09-18 | no        |
+|  6 | surbhi   |      3 |  22000 | developer         | 2018-05-12 | yes       |
+| 27 | swati    |      6 |  39800 | HR                | 0005-07-17 | no        |
+|  3 | sweety   |      3 |  60000 | developer         | 2017-06-12 | yes       |
+| 34 | urvish   |      4 |  19000 | designer          | 2021-02-12 | yes       |
+| 31 | uvesh    |      4 |  12900 | designer          | 0001-02-09 | yes       |
+| 12 | vidhi    |      5 |  33500 | Project_codinater | 0001-08-10 | no        |
++----+----------+--------+--------+-------------------+------------+-----------+
+38 rows in set (0.001 sec)
+
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
+40)
+MariaDB [practice2]> SELECT E_Name,12*Salary FROM employee_details ORDER BY 12*Salary desc;
++----------+-----------+
+| E_Name   | 12*Salary |
++----------+-----------+
+| sweety   |    720000 |
+| sanket   |    504000 |
+| swati    |    477600 |
+| manshi   |    468000 |
+| prachi   |    420000 |
+| harsh    |    405600 |
+| vidhi    |    402000 |
+| setu     |    360000 |
+| nidhi    |    357600 |
+| happy    |    348000 |
+| laxita   |    348000 |
+| sonali   |    330000 |
+| darshita |    330000 |
+| megha    |    312000 |
+| jarni    |    300000 |
+| shruti   |    300000 |
+| pravina  |    300000 |
+| joy      |    300000 |
+| jaynam   |    285600 |
+| smita    |    285600 |
+| bhumika  |    282000 |
+| reena    |    282000 |
+| kamaxi   |    276000 |
+| anjali   |    276000 |
+| shayam   |    273600 |
+| surbhi   |    264000 |
+| riya     |    261600 |
+| roshan   |    261600 |
+| jay      |    252000 |
+| bhumika  |    246000 |
+| pooja    |    240000 |
+| urvish   |    228000 |
+| kinjal   |    180000 |
+| smit     |    165600 |
+| nikita   |    162000 |
+| uvesh    |    154800 |
+| jaymin   |    144000 |
+| roshani  |    141600 |
++----------+-----------+
+38 rows in set (0.001 sec)
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+41)
+MariaDB [practice2]> select E_Name,Salary,Salary/100*15 as HRA,Salary/100*10 as DA,Salary/100*5 as PF,Salary*salary/100*15*Salary/100*10-Salary/100*5 as Total_sal from employee_details;
++----------+--------+-----------+-----------+-----------+------------------------+
+| E_Name   | Salary | HRA       | DA        | PF        | Total_sal              |
++----------+--------+-----------+-----------+-----------+------------------------+
+| setu     |  30000 | 4500.0000 | 3000.0000 | 1500.0000 |  404999998500.00000000 |
+| prachi   |  35000 | 5250.0000 | 3500.0000 | 1750.0000 |  643124998250.00000000 |
+| sweety   |  60000 | 9000.0000 | 6000.0000 | 3000.0000 | 3239999997000.00000000 |
+| shruti   |  25000 | 3750.0000 | 2500.0000 | 1250.0000 |  234374998750.00000000 |
+| sanket   |  42000 | 6300.0000 | 4200.0000 | 2100.0000 | 1111319997900.00000000 |
+| surbhi   |  22000 | 3300.0000 | 2200.0000 | 1100.0000 |  159719998900.00000000 |
+| jaymin   |  12000 | 1800.0000 | 1200.0000 |  600.0000 |   25919999400.00000000 |
+| pooja    |  20000 | 3000.0000 | 2000.0000 | 1000.0000 |  119999999000.00000000 |
+| pravina  |  25000 | 3750.0000 | 2500.0000 | 1250.0000 |  234374998750.00000000 |
+| kinjal   |  15000 | 2250.0000 | 1500.0000 |  750.0000 |   50624999250.00000000 |
+| reena    |  23500 | 3525.0000 | 2350.0000 | 1175.0000 |  194668123825.00000000 |
+| vidhi    |  33500 | 5025.0000 | 3350.0000 | 1675.0000 |  563930623325.00000000 |
+| nikita   |  13500 | 2025.0000 | 1350.0000 |  675.0000 |   36905624325.00000000 |
+| bhumika  |  23500 | 3525.0000 | 2350.0000 | 1175.0000 |  194668123825.00000000 |
+| bhumika  |  20500 | 3075.0000 | 2050.0000 | 1025.0000 |  129226873975.00000000 |
+| sonali   |  27500 | 4125.0000 | 2750.0000 | 1375.0000 |  311953123625.00000000 |
+| darshita |  27500 | 4125.0000 | 2750.0000 | 1375.0000 |  311953123625.00000000 |
+| jarni    |  25000 | 3750.0000 | 2500.0000 | 1250.0000 |  234374998750.00000000 |
+| joy      |  25000 | 3750.0000 | 2500.0000 | 1250.0000 |  234374998750.00000000 |
+| jay      |  21000 | 3150.0000 | 2100.0000 | 1050.0000 |  138914998950.00000000 |
+| jaynam   |  23800 | 3570.0000 | 2380.0000 | 1190.0000 |  202219078810.00000000 |
+| harsh    |  33800 | 5070.0000 | 3380.0000 | 1690.0000 |  579217078310.00000000 |
+| smit     |  13800 | 2070.0000 | 1380.0000 |  690.0000 |   39421079310.00000000 |
+| smita    |  23800 | 3570.0000 | 2380.0000 | 1190.0000 |  202219078810.00000000 |
+| shayam   |  22800 | 3420.0000 | 2280.0000 | 1140.0000 |  177785278860.00000000 |
+| nidhi    |  29800 | 4470.0000 | 2980.0000 | 1490.0000 |  396953878510.00000000 |
+| swati    |  39800 | 5970.0000 | 3980.0000 | 1990.0000 |  945671878010.00000000 |
+| riya     |  21800 | 3270.0000 | 2180.0000 | 1090.0000 |  155403478910.00000000 |
+| roshan   |  21800 | 3270.0000 | 2180.0000 | 1090.0000 |  155403478910.00000000 |
+| roshani  |  11800 | 1770.0000 | 1180.0000 |  590.0000 |   24645479410.00000000 |
+| uvesh    |  12900 | 1935.0000 | 1290.0000 |  645.0000 |   32200334355.00000000 |
+| laxita   |  29000 | 4350.0000 | 2900.0000 | 1450.0000 |  365834998550.00000000 |
+| manshi   |  39000 | 5850.0000 | 3900.0000 | 1950.0000 |  889784998050.00000000 |
+| urvish   |  19000 | 2850.0000 | 1900.0000 |  950.0000 |  102884999050.00000000 |
+| kamaxi   |  23000 | 3450.0000 | 2300.0000 | 1150.0000 |  182504998850.00000000 |
+| anjali   |  23000 | 3450.0000 | 2300.0000 | 1150.0000 |  182504998850.00000000 |
+| megha    |  26000 | 3900.0000 | 2600.0000 | 1300.0000 |  263639998700.00000000 |
+| happy    |  29000 | 4350.0000 | 2900.0000 | 1450.0000 |  365834998550.00000000 |
++----------+--------+-----------+-----------+-----------+------------------------+
+38 rows in set (0.001 sec)
+====================================================================================================================
+42)
+MariaDB [practice2]> select count(E_Name) , Dep_No from employee_details GROUP BY Dep_No ;
++---------------+--------+
+| count(E_Name) | Dep_No |
++---------------+--------+
+|             3 |      1 |
+|             5 |      2 |
+|             9 |      3 |
+|             7 |      4 |
+|             7 |      5 |
+|             4 |      6 |
+|             3 |      7 |
++---------------+--------+
+7 rows in set (0.001 sec)
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+43)
+MariaDB [practice2]> select count(E_Name) , Job_Title from employee_details GROUP BY Job_Title ;
++---------------+-------------------+
+| count(E_Name) | Job_Title         |
++---------------+-------------------+
+|             5 | clerk             |
+|             7 | designer          |
+|             9 | developer         |
+|             4 | HR                |
+|             3 | Manager           |
+|             7 | Project_codinater |
+|             3 | system_admin      |
++---------------+-------------------+
+7 rows in set (0.001 sec)
+
+........................................................................................................................
+44)
+MariaDB [practice2]> select sum(Salary) , Dep_No from employee_details GROUP BY Dep_No ;
++-------------+--------+
+| sum(Salary) | Dep_No |
++-------------+--------+
+|       60000 |      1 |
+|      116200 |      2 |
+|      276000 |      3 |
+|      156500 |      4 |
+|      169500 |      5 |
+|      114200 |      6 |
+|       78000 |      7 |
++-------------+--------+
+7 rows in set (0.001 sec)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+45)
+MariaDB [practice2]> select max(Salary) , Dep_No from employee_details GROUP BY Dep_No ;
++-------------+--------+
+| max(Salary) | Dep_No |
++-------------+--------+
+|       25000 |      1 |
+|       33800 |      2 |
+|       60000 |      3 |
+|       39000 |      4 |
+|       33500 |      5 |
+|       39800 |      6 |
+|       29000 |      7 |
++-------------+--------+
+7 rows in set (0.001 sec)
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+46)
+MariaDB [practice2]> select sum(Salary) , Job_Title from employee_details GROUP BY Job_Title ;
++-------------+-------------------+
+| sum(Salary) | Job_Title         |
++-------------+-------------------+
+|      116200 | clerk             |
+|      156500 | designer          |
+|      276000 | developer         |
+|      114200 | HR                |
+|       60000 | Manager           |
+|      169500 | Project_codinater |
+|       78000 | system_admin      |
++-------------+-------------------+
+7 rows in set (0.001 sec)
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+47)
+MariaDB [practice2]> select max(Salary) , Job_Title from employee_details GROUP BY Job_Title ;
++-------------+-------------------+
+| max(Salary) | Job_Title         |
++-------------+-------------------+
+|       33800 | clerk             |
+|       39000 | designer          |
+|       60000 | developer         |
+|       39800 | HR                |
+|       25000 | Manager           |
+|       33500 | Project_codinater |
+|       29000 | system_admin      |
++-------------+-------------------+
+7 rows in set (0.001 sec)
+###########################################################################################
+48)
+MariaDB [practice2]> select count(E_Name) , Dep_No from employee_details GROUP BY Dep_No HAVING COUNT(Dep_No)>3 ;
++---------------+--------+
+| count(E_Name) | Dep_No |
++---------------+--------+
+|             5 |      2 |
+|             9 |      3 |
+|             7 |      4 |
+|             7 |      5 |
+|             4 |      6 |
++---------------+--------+
+5 rows in set (0.001 sec)
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+49)
+MariaDB [practice2]> select sum(Salary) , Job_Title from employee_details GROUP BY Job_Title HAVING sum(Salary)>10000 ;
++-------------+-------------------+
+| sum(Salary) | Job_Title         |
++-------------+-------------------+
+|      116200 | clerk             |
+|      156500 | designer          |
+|      276000 | developer         |
+|      114200 | HR                |
+|       60000 | Manager           |
+|      169500 | Project_codinater |
+|       78000 | system_admin      |
++-------------+-------------------+
+7 rows in set (0.001 sec)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+50)
+MariaDB [practice2]> select count(E_Name) , Job_Title from employee_details GROUP BY Job_Title HAVING count(Job_title)>3 ;
++---------------+-------------------+
+| count(E_Name) | Job_Title         |
++---------------+-------------------+
+|             5 | clerk             |
+|             7 | designer          |
+|             9 | developer         |
+|             4 | HR                |
+|             7 | Project_codinater |
++---------------+-------------------+
+------------------------------------------------------------------------------------------------------
+51)
