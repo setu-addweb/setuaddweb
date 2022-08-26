@@ -1,0 +1,537 @@
+
+             JOINS
+ 1)            
+ select s.bounus ,s.dedection,d.designation,d.demail from department d INNER JOIN salary s ON d.demail = s.email ORDER BY salary;
++--------+-----------+-------------------+--------------------+
+| bounus | dedection | designation       | demail             |
++--------+-----------+-------------------+--------------------+
+|   3000 |     15000 | CA                | jay@gmail.com      |
+|   3000 |     15000 | consultant        | jay@gmail.com      |
+|   3300 |     19000 | CA                | jay@gmail.com      |
+|   3300 |     19000 | consultant        | jay@gmail.com      |
+|   1000 |     20000 | designer          | prachi@gmail.com   |
+|   2000 |     24000 | developer         | vedant@gmail.com   |
+|   3000 |     25000 | developer         | setu@gmail.com     |
+|   3500 |     30000 | manager           | meet@gmail.com     |
+|   5000 |     35000 | accountant        | roshan@gmail.com   |
+|   5000 |    350000 | HR                | happy@gmail.com    |
+|   3300 |     37000 | financial planner | riya@gmail.com     |
+|   1000 |     33000 | sales             | sonali@gmail.com   |
+|   3700 |     40000 | vendor            | kamaxi@gmail.com   |
+|   1500 |     40000 | CEO               | reena@gmail.com    |
+|   2300 |     39000 | analyst           | prajakta@gmail.com |
+|   2500 |     44000 | HR                | kinjal@gmail.com   |
++--------+-----------+-------------------+--------------------+
+16 rows in set (0.001 sec)
+
+
+2)
+MariaDB [practice3]> update salary set email = 'vijay@gmail.com' where salary = 23000;
+Query OK, 1 row affected (0.117 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [practice3]> select s.bounus ,s.dedection,d.designation,d.demail from department d INNER JOIN salary s ON d.demail = s.email ORDER BY salary;
++--------+-----------+-------------------+--------------------+
+| bounus | dedection | designation       | demail             |
++--------+-----------+-------------------+--------------------+
+|   3000 |     15000 | CA                | vijay@gmail.com    |
+|   3300 |     19000 | consultant        | jay@gmail.com      |
+|   1000 |     20000 | designer          | prachi@gmail.com   |
+|   2000 |     24000 | developer         | vedant@gmail.com   |
+|   3000 |     25000 | developer         | setu@gmail.com     |
+|   3500 |     30000 | manager           | meet@gmail.com     |
+|   5000 |    350000 | HR                | happy@gmail.com    |
+|   5000 |     35000 | accountant        | roshan@gmail.com   |
+|   3300 |     37000 | financial planner | riya@gmail.com     |
+|   3700 |     40000 | vendor            | kamaxi@gmail.com   |
+|   1000 |     33000 | sales             | sonali@gmail.com   |
+|   1500 |     40000 | CEO               | reena@gmail.com    |
+|   2300 |     39000 | analyst           | prajakta@gmail.com |
+|   2500 |     44000 | HR                | kinjal@gmail.com   |
++--------+-----------+-------------------+--------------------+
+14 rows in set (0.001 sec)
+
+
+3)
+
+
+MariaDB [practice3]> select id,d.dname,d.did,d.designation,s.email,s.salary from salary s inner join department d on d.demail=s.email where dname = 'IT';
++----+-------+------+-------------+------------------+--------+
+| id | dname | did  | designation | email            | salary |
++----+-------+------+-------------+------------------+--------+
+|  1 | IT    |    1 | developer   | setu@gmail.com   |  30000 |
+|  2 | IT    |    1 | developer   | vedant@gmail.com |  29000 |
+|  5 | IT    |    1 | designer    | prachi@gmail.com |  25000 |
++----+-------+------+-------------+------------------+--------+
+3 rows in set (0.001 sec)
+
+4)
+
+
+MariaDB [practice3]> select id,d.dname,d.did,d.designation,s.email,s.salary from salary s inner join department d on d.demail=s.email where bounus>4000;
++----+------------+------+-------------+------------------+--------+
+| id | dname      | did  | designation | email            | salary |
++----+------------+------+-------------+------------------+--------+
+|  6 | management |    2 | HR          | happy@gmail.com  |  40000 |
+| 15 | finance    |    4 | accountant  | roshan@gmail.com |  40000 |
++----+------------+------+-------------+------------------+--------+
+
+5)
+
+
+MariaDB [practice3]> select id,d.dname,d.did,d.designation,s.email,s.salary from salary s inner join department d on d.demail=s.email where dname = 'IT' and salary>13000;
++----+-------+------+-------------+------------------+--------+
+| id | dname | did  | designation | email            | salary |
++----+-------+------+-------------+------------------+--------+
+|  1 | IT    |    1 | developer   | setu@gmail.com   |  30000 |
+|  2 | IT    |    1 | developer   | vedant@gmail.com |  29000 |
+|  5 | IT    |    1 | designer    | prachi@gmail.com |  25000 |
++----+-------+------+-------------+------------------+--------+
+3 rows in set (0.001 sec)
+
+6)
+
+MariaDB [practice3]> select id,d.dname,d.did,d.designation,s.email,s.salary from salary s inner join department d on d.demail=s.email  ORDER BY s.salary DESC;
++----+------------+------+-------------------+--------------------+--------+
+| id | dname      | did  | designation       | email              | salary |
++----+------------+------+-------------------+--------------------+--------+
+|  8 | management |    2 | HR                | kinjal@gmail.com   |  50000 |
+| 11 | marketing  |    3 | analyst           | prajakta@gmail.com |  46000 |
+|  9 | management |    2 | CEO               | reena@gmail.com    |  45000 |
+| 18 | purchase   |    5 | vendor            | kamaxi@gmail.com   |  45000 |
+| 10 | marketing  |    3 | sales             | sonali@gmail.com   |  45000 |
+| 16 | finance    |    4 | financial planner | riya@gmail.com     |  43000 |
+|  6 | management |    2 | HR                | happy@gmail.com    |  40000 |
+| 15 | finance    |    4 | accountant        | roshan@gmail.com   |  40000 |
+|  7 | management |    2 | manager           | meet@gmail.com     |  35000 |
+|  1 | IT         |    1 | developer         | setu@gmail.com     |  30000 |
+|  2 | IT         |    1 | developer         | vedant@gmail.com   |  29000 |
+|  5 | IT         |    1 | designer          | prachi@gmail.com   |  25000 |
+| 12 | marketing  |    3 | consultant        | jay@gmail.com      |  25000 |
+| 14 | finance    |    4 | CA                | vijay@gmail.com    |  23000 |
++----+------------+------+-------------------+--------------------+--------+
+14 rows in set (0.001 sec)
+
+7)
+MariaDB [practice3]> select d.did,d.designation,s.email,s.salary*12 from salary s inner join department d on d.demail=s.email  group by d.designation ,d.did;
++------+-------------------+--------------------+-------------+
+| did  | designation       | email              | s.salary*12 |
++------+-------------------+--------------------+-------------+
+|    4 | accountant        | roshan@gmail.com   |      480000 |
+|    3 | analyst           | prajakta@gmail.com |      552000 |
+|    4 | CA                | vijay@gmail.com    |      276000 |
+|    2 | CEO               | reena@gmail.com    |      540000 |
+|    3 | consultant        | jay@gmail.com      |      300000 |
+|    1 | designer          | prachi@gmail.com   |      300000 |
+|    1 | developer         | setu@gmail.com     |      360000 |
+|    4 | financial planner | riya@gmail.com     |      516000 |
+|    2 | HR                | happy@gmail.com    |      480000 |
+|    2 | manager           | meet@gmail.com     |      420000 |
+|    3 | sales             | sonali@gmail.com   |      540000 |
+|    5 | vendor            | kamaxi@gmail.com   |      540000 |
++------+-------------------+--------------------+-------------+
+12 rows in set (0.001 sec)
+
+
+
+left join 
+1)
+
+MariaDB [practice3]> select e.eid ,e.ename,d.designation,d.demail from employee e left JOIN department d ON e.eid = d.id ORDER BY e.eid;
++-----+----------+-------------+--------------------+
+| eid | ename    | designation | demail             |
++-----+----------+-------------+--------------------+
+|   1 | setu     | developer   | setu@gmail.com     |
+|   2 | vedant   | developer   | vedant@gmail.com   |
+|   3 | prachi   | NULL        | NULL               |
+|   4 | rutvi    | NULL        | NULL               |
+|   5 | kamaxi   | designer    | prachi@gmail.com   |
+|   6 | kamini   | HR          | happy@gmail.com    |
+|   7 | roshan   | manager     | meet@gmail.com     |
+|   8 | riya     | HR          | kinjal@gmail.com   |
+|   9 | jay      | CEO         | reena@gmail.com    |
+|  10 | mayank   | sales       | sonali@gmail.com   |
+|  11 | mayuri   | analyst     | prajakta@gmail.com |
+|  12 | prajakta | consultant  | jay@gmail.com      |
+|  13 | sonali   | NULL        | NULL               |
+|  14 | kinjal   | CA          | vijay@gmail.com    |
+|  15 | reena    | accountant  | roshan@gmail.com   |
++-----+----------+-------------+--------------------+
+15 rows in set (0.001 sec)
+
+ 2)
+ 
+ MariaDB [practice3]> select e.ename,d.designation from employee e left JOIN department d ON e.eid = d.id  where  eid between 5 and 10;
++--------+-------------+
+| ename  | designation |
++--------+-------------+
+| kamaxi | designer    |
+| kamini | HR          |
+| roshan | manager     |
+| riya   | HR          |
+| jay    | CEO         |
+| mayank | sales       |
++--------+-------------+
+6 rows in set (0.001 sec)
+
+right join
+
+1)
+
+MariaDB [practice3]> select e.eid ,e.ename,d.designation,d.demail from employee e right JOIN department d ON e.eid = d.id ORDER BY e.eid;
++------+----------+-------------------+--------------------+
+| eid  | ename    | designation       | demail             |
++------+----------+-------------------+--------------------+
+| NULL | NULL     | financial planner | riya@gmail.com     |
+| NULL | NULL     | vendor            | kamaxi@gmail.com   |
+|    1 | setu     | developer         | setu@gmail.com     |
+|    2 | vedant   | developer         | vedant@gmail.com   |
+|    5 | kamaxi   | designer          | prachi@gmail.com   |
+|    6 | kamini   | HR                | happy@gmail.com    |
+|    7 | roshan   | manager           | meet@gmail.com     |
+|    8 | riya     | HR                | kinjal@gmail.com   |
+|    9 | jay      | CEO               | reena@gmail.com    |
+|   10 | mayank   | sales             | sonali@gmail.com   |
+|   11 | mayuri   | analyst           | prajakta@gmail.com |
+|   12 | prajakta | consultant        | jay@gmail.com      |
+|   14 | kinjal   | CA                | vijay@gmail.com    |
+|   15 | reena    | accountant        | roshan@gmail.com   |
++------+----------+-------------------+--------------------+
+14 rows in set (0.001 sec)
+
+2)
+
+MariaDB [practice3]> select e.eid ,e.ename,d.designation,d.demail from employee e right JOIN department d ON e.eid = d.id  ORDER BY e.ename asc;
++------+----------+-------------------+--------------------+
+| eid  | ename    | designation       | demail             |
++------+----------+-------------------+--------------------+
+| NULL | NULL     | financial planner | riya@gmail.com     |
+| NULL | NULL     | vendor            | kamaxi@gmail.com   |
+|    9 | jay      | CEO               | reena@gmail.com    |
+|    5 | kamaxi   | designer          | prachi@gmail.com   |
+|    6 | kamini   | HR                | happy@gmail.com    |
+|   14 | kinjal   | CA                | vijay@gmail.com    |
+|   10 | mayank   | sales             | sonali@gmail.com   |
+|   11 | mayuri   | analyst           | prajakta@gmail.com |
+|   12 | prajakta | consultant        | jay@gmail.com      |
+|   15 | reena    | accountant        | roshan@gmail.com   |
+|    8 | riya     | HR                | kinjal@gmail.com   |
+|    7 | roshan   | manager           | meet@gmail.com     |
+|    1 | setu     | developer         | setu@gmail.com     |
+|    2 | vedant   | developer         | vedant@gmail.com   |
++------+----------+-------------------+--------------------+
+14 rows in set (0.001 sec)
+
+MariaDB [practice3]> select e.eid ,e.ename,d.designation,d.demail from employee e right JOIN department d ON e.eid = d.id  ORDER BY e.eid asc;
++------+----------+-------------------+--------------------+
+| eid  | ename    | designation       | demail             |
++------+----------+-------------------+--------------------+
+| NULL | NULL     | financial planner | riya@gmail.com     |
+| NULL | NULL     | vendor            | kamaxi@gmail.com   |
+|    1 | setu     | developer         | setu@gmail.com     |
+|    2 | vedant   | developer         | vedant@gmail.com   |
+|    5 | kamaxi   | designer          | prachi@gmail.com   |
+|    6 | kamini   | HR                | happy@gmail.com    |
+|    7 | roshan   | manager           | meet@gmail.com     |
+|    8 | riya     | HR                | kinjal@gmail.com   |
+|    9 | jay      | CEO               | reena@gmail.com    |
+|   10 | mayank   | sales             | sonali@gmail.com   |
+|   11 | mayuri   | analyst           | prajakta@gmail.com |
+|   12 | prajakta | consultant        | jay@gmail.com      |
+|   14 | kinjal   | CA                | vijay@gmail.com    |
+|   15 | reena    | accountant        | roshan@gmail.com   |
++------+----------+-------------------+--------------------+
+
+
+FULL JOIN 
+
+1)
+MariaDB [practice3]> select e.ename,d.designation from employee e left JOIN department d ON e.eid = d.id   union all select e.ename,d.designation from employee e right JOIN department d ON e.eid = d.id ;
++----------+-------------------+
+| ename    | designation       |
++----------+-------------------+
+| setu     | developer         |
+| vedant   | developer         |
+| kamaxi   | designer          |
+| kamini   | HR                |
+| roshan   | manager           |
+| riya     | HR                |
+| jay      | CEO               |
+| mayank   | sales             |
+| mayuri   | analyst           |
+| prajakta | consultant        |
+| kinjal   | CA                |
+| reena    | accountant        |
+| prachi   | NULL              |
+| rutvi    | NULL              |
+| sonali   | NULL              |
+| setu     | developer         |
+| vedant   | developer         |
+| kamaxi   | designer          |
+| kamini   | HR                |
+| roshan   | manager           |
+| riya     | HR                |
+| jay      | CEO               |
+| mayank   | sales             |
+| mayuri   | analyst           |
+| prajakta | consultant        |
+| kinjal   | CA                |
+| reena    | accountant        |
+| NULL     | financial planner |
+| NULL     | vendor            |
++----------+-------------------+
+29 rows in set (0.001 sec)
+
+CRROS JOIN 
+
+MariaDB [practice3]> select d.dname,d.designation ,e.eid,e.ename from employee e cross join department d  on e.eid = d.id where d.dname = 'management' ;
++------------+-------------+-----+--------+
+| dname      | designation | eid | ename  |
++------------+-------------+-----+--------+
+| management | HR          |   6 | kamini |
+| management | manager     |   7 | roshan |
+| management | HR          |   8 | riya   |
+| management | CEO         |   9 | jay    |
++------------+-------------+-----+--------+
+4 rows in set (0.001 sec)
+--------------------------------------------------------------------------------------------------------------
+
+63)
+MariaDB [practice2]> select upper(E_Name)from employee_details
+    -> ;
++---------------+
+| upper(E_Name) |
++---------------+
+| SETU          |
+| PRACHI        |
+| SWEETY        |
+| SHRUTI        |
+| SANKET        |
+| SURBHI        |
+| JAYMIN        |
+| POOJA         |
+| PRAVINA       |
+| KINJAL        |
+| REENA         |
+| VIDHI         |
+| NIKITA        |
+| BHUMIKA       |
+| BHUMIKA       |
+| SONALI        |
+| DARSHITA      |
+| JARNI         |
+| JOY           |
+| JAY           |
+| JAYNAM        |
+| HARSH         |
+| SMIT          |
+| SMITA         |
+| SHAYAM        |
+| NIDHI         |
+| SWATI         |
+| RIYA          |
+| ROSHAN        |
+| ROSHANI       |
+| UVESH         |
+| LAXITA        |
+| MANSHI        |
+| URVISH        |
+| KAMAXI        |
+| ANJALI        |
+| MEGHA         |
+| HAPPY         |
++---------------+
+38 rows in set (0.001 sec)
+
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+64)
+
+MariaDB [practice2]> select LOWER(E_Name)from employee_details;
++---------------+
+| LOWER(E_Name) |
++---------------+
+| setu          |
+| prachi        |
+| sweety        |
+| shruti        |
+| sanket        |
+| surbhi        |
+| jaymin        |
+| pooja         |
+| pravina       |
+| kinjal        |
+| reena         |
+| vidhi         |
+| nikita        |
+| bhumika       |
+| bhumika       |
+| sonali        |
+| darshita      |
+| jarni         |
+| joy           |
+| jay           |
+| jaynam        |
+| harsh         |
+| smit          |
+| smita         |
+| shayam        |
+| nidhi         |
+| swati         |
+| riya          |
+| roshan        |
+| roshani       |
+| uvesh         |
+| laxita        |
+| manshi        |
+| urvish        |
+| kamaxi        |
+| anjali        |
+| megha         |
+| happy         |
++---------------+
+38 rows in set (0.000 sec)
+
+--------------------------------------------------------------------------------------------------------------
+
+66)
+
+MariaDB [practice2]> select length(E_Name) as length from employee_details;
++--------+
+| length |
++--------+
+|      4 |
+|      6 |
+|      6 |
+|      6 |
+|      6 |
+|      6 |
+|      6 |
+|      5 |
+|      7 |
+|      6 |
+|      5 |
+|      5 |
+|      6 |
+|      7 |
+|      7 |
+|      6 |
+|      8 |
+|      5 |
+|      3 |
+|      3 |
+|      6 |
+|      5 |
+|      4 |
+|      5 |
+|      6 |
+|      5 |
+|      5 |
+|      4 |
+|      6 |
+|      7 |
+|      5 |
+|      6 |
+|      6 |
+|      6 |
+|      6 |
+|      6 |
+|      5 |
+|      5 |
++--------+
+38 rows in set (0.001 sec)
+
+  67)
+  
+  MariaDB [practice2]> select length('prachi') from employee_details where id = 2;
++------------------+
+| length('prachi') |
++------------------+
+|                6 |
++------------------+
+1 row in set (0.001 sec)
+
+68)
+
+MariaDB [practice2]> select concat(E_Name,Job_Title) from employee_details;
++---------------------------+
+| concat(E_Name,Job_Title)  |
++---------------------------+
+| setudeveloper             |
+| prachideveloper           |
+| sweetydeveloper           |
+| shrutideveloper           |
+| sanketdeveloper           |
+| surbhideveloper           |
+| jaymindeveloper           |
+| poojaManager              |
+| pravinaManager            |
+| kinjalManager             |
+| reenaProject_codinater    |
+| vidhiProject_codinater    |
+| nikitaProject_codinater   |
+| bhumikaProject_codinater  |
+| bhumikaproject_codinater  |
+| sonaliproject_codinater   |
+| darshitaproject_codinater |
+| jarnideveloper            |
+| joydeveloper              |
+| jayclerk                  |
+| jaynamclerk               |
+| harshclerk                |
+| smitclerk                 |
+| smitaclerk                |
+| shayamHR                  |
+| nidhiHR                   |
+| swatiHR                   |
+| riyaHR                    |
+| roshandesigner            |
+| roshanidesigner           |
+| uveshdesigner             |
+| laxitadesigner            |
+| manshidesigner            |
+| urvishdesigner            |
+| kamaxidesigner            |
+| anjalisystem_admin        |
+| meghasystem_admin         |
+| happysystem_admin         |
++---------------------------+
+38 rows in set (0.001 sec)
+
+
+69)
+
+MariaDB [practice2]> select substr('prachi',3,2) from employee_details where id = 2;
++----------------------+
+| substr('prachi',3,2) |
++----------------------+
+| ac                   |
++----------------------+
+1 row in set (0.001 sec)
+
+70)
+
+MariaDB [practice2]> select INSTR('developer','e') from employee_details where id =1;
++------------------------+
+| INSTR('developer','e') |
++------------------------+
+|                      2 |
++------------------------+
+1 row in set (0.001 sec)
+
+71)
+
+MariaDB [practice2]> select replace('setu','s','j')from employee_details where id = 1;
++-------------------------+
+| replace('setu','s','j') |
++-------------------------+
+| jetu                    |
++-------------------------+
+1 row in set (0.001 sec)
+
+72)
+
+
+  
+  
+  
