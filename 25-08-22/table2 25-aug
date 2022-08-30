@@ -294,6 +294,60 @@ MariaDB [practice3]> select d.dname,d.designation ,e.eid,e.ename from employee e
 | management | CEO         |   9 | jay    |
 +------------+-------------+-----+--------+
 4 rows in set (0.001 sec)
+
+
+ select * from employee CROSS JOIN department where id between 1 and 5;
++-----+----------+-----------+----------+----+-------+------+-------------+------------------+
+| eid | ename    | eaddress  | emobile  | id | dname | did  | designation | demail           |
++-----+----------+-----------+----------+----+-------+------+-------------+------------------+
+|   1 | setu     | ahmedabad | 87654332 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|   1 | setu     | ahmedabad | 87654332 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|   1 | setu     | ahmedabad | 87654332 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|   2 | vedant   | jaipur    | 45678974 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|   2 | vedant   | jaipur    | 45678974 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|   2 | vedant   | jaipur    | 45678974 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|   3 | prachi   | mumbai    |  2345678 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|   3 | prachi   | mumbai    |  2345678 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|   3 | prachi   | mumbai    |  2345678 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|   4 | rutvi    | ahmedabad |  8765433 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|   4 | rutvi    | ahmedabad |  8765433 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|   4 | rutvi    | ahmedabad |  8765433 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|   5 | kamaxi   | simla     | 98765433 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|   5 | kamaxi   | simla     | 98765433 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|   5 | kamaxi   | simla     | 98765433 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|   6 | kamini   | rajasthan | 98765345 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|   6 | kamini   | rajasthan | 98765345 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|   6 | kamini   | rajasthan | 98765345 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|   7 | roshan   | panjab    |  3456545 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|   7 | roshan   | panjab    |  3456545 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|   7 | roshan   | panjab    |  3456545 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|   8 | riya     | kerala    |   876543 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|   8 | riya     | kerala    |   876543 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|   8 | riya     | kerala    |   876543 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|   9 | jay      | goa       |  3456783 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|   9 | jay      | goa       |  3456783 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|   9 | jay      | goa       |  3456783 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|  10 | mayank   | bihar     | 87455453 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|  10 | mayank   | bihar     | 87455453 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|  10 | mayank   | bihar     | 87455453 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|  11 | mayuri   | odisha    |   345678 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|  11 | mayuri   | odisha    |   345678 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|  11 | mayuri   | odisha    |   345678 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|  12 | prajakta | assam     |   457658 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|  12 | prajakta | assam     |   457658 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|  12 | prajakta | assam     |   457658 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|  13 | sonali   | haryana   |  8567654 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|  13 | sonali   | haryana   |  8567654 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|  13 | sonali   | haryana   |  8567654 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|  14 | kinjal   | goa       |  8563456 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|  14 | kinjal   | goa       |  8563456 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|  14 | kinjal   | goa       |  8563456 |  5 | IT    |    1 | designer    | prachi@gmail.com |
+|  15 | reena    | manipur   |  6788686 |  1 | IT    |    1 | developer   | setu@gmail.com   |
+|  15 | reena    | manipur   |  6788686 |  2 | IT    |    1 | developer   | vedant@gmail.com |
+|  15 | reena    | manipur   |  6788686 |  5 | IT    |    1 | designer    | prachi@gmail.com |
++-----+----------+-----------+----------+----+-------+------+-------------+------------------+
+45 rows in set (0.001 sec)
+
 --------------------------------------------------------------------------------------------------------------
 
 63)
@@ -530,6 +584,39 @@ MariaDB [practice2]> select replace('setu','s','j')from employee_details where i
 1 row in set (0.001 sec)
 
 72)
+
+MariaDB [practice2]> select Job_Title, E_Name, replace(Job_Title, 'HR', 'Boss')  from employee_details where id =25; 
++-----------+--------+----------------------------------+
+| Job_Title | E_Name | replace(Job_Title, 'HR', 'Boss') |
++-----------+--------+----------------------------------+
+| HR        | shayam | Boss                             |
++-----------+--------+----------------------------------+
+1 row in set (0.001 sec)
+
+74)
+
+
+MariaDB [practice2]> SELECT DATE_FORMAT(FROM_DAYS(DATEDIFF(now(),'2001-07-08')), '%Y')+0 AS Age;
++------+
+| Age  |
++------+
+|   21 |
++------+
+1 row in set (0.001 sec)
+
+81)
+
+MariaDB [practice2]> SELECT E_Name,Dep_NO,Job_Title FROM employee_details WHERE Dep_NO=1 AND Job_Title IN (SELECT Job_Title FROM employee_details WHERE Dep_NO=3);
++--------+--------+-----------+
+| E_Name | Dep_NO | Job_Title |
++--------+--------+-----------+
+| pooja  |      1 | developer |
++--------+--------+-----------+
+1 row in set (0.001 sec)
+
+
+
+
 
 
   

@@ -1,0 +1,422 @@
+63)
+MariaDB [practice2]> select upper(E_Name)from employee_details
+    -> ;
++---------------+
+| upper(E_Name) |
++---------------+
+| SETU          |
+| PRACHI        |
+| SWEETY        |
+| SHRUTI        |
+| SANKET        |
+| SURBHI        |
+| JAYMIN        |
+| POOJA         |
+| PRAVINA       |
+| KINJAL        |
+| REENA         |
+| VIDHI         |
+| NIKITA        |
+| BHUMIKA       |
+| BHUMIKA       |
+| SONALI        |
+| DARSHITA      |
+| JARNI         |
+| JOY           |
+| JAY           |
+| JAYNAM        |
+| HARSH         |
+| SMIT          |
+| SMITA         |
+| SHAYAM        |
+| NIDHI         |
+| SWATI         |
+| RIYA          |
+| ROSHAN        |
+| ROSHANI       |
+| UVESH         |
+| LAXITA        |
+| MANSHI        |
+| URVISH        |
+| KAMAXI        |
+| ANJALI        |
+| MEGHA         |
+| HAPPY         |
++---------------+
+38 rows in set (0.001 sec)
+
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+64)
+
+MariaDB [practice2]> select LOWER(E_Name)from employee_details;
++---------------+
+| LOWER(E_Name) |
++---------------+
+| setu          |
+| prachi        |
+| sweety        |
+| shruti        |
+| sanket        |
+| surbhi        |
+| jaymin        |
+| pooja         |
+| pravina       |
+| kinjal        |
+| reena         |
+| vidhi         |
+| nikita        |
+| bhumika       |
+| bhumika       |
+| sonali        |
+| darshita      |
+| jarni         |
+| joy           |
+| jay           |
+| jaynam        |
+| harsh         |
+| smit          |
+| smita         |
+| shayam        |
+| nidhi         |
+| swati         |
+| riya          |
+| roshan        |
+| roshani       |
+| uvesh         |
+| laxita        |
+| manshi        |
+| urvish        |
+| kamaxi        |
+| anjali        |
+| megha         |
+| happy         |
++---------------+
+38 rows in set (0.000 sec)
+
+--------------------------------------------------------------------------------------------------------------
+
+66)
+
+MariaDB [practice2]> select length(E_Name) as length from employee_details;
++--------+
+| length |
++--------+
+|      4 |
+|      6 |
+|      6 |
+|      6 |
+|      6 |
+|      6 |
+|      6 |
+|      5 |
+|      7 |
+|      6 |
+|      5 |
+|      5 |
+|      6 |
+|      7 |
+|      7 |
+|      6 |
+|      8 |
+|      5 |
+|      3 |
+|      3 |
+|      6 |
+|      5 |
+|      4 |
+|      5 |
+|      6 |
+|      5 |
+|      5 |
+|      4 |
+|      6 |
+|      7 |
+|      5 |
+|      6 |
+|      6 |
+|      6 |
+|      6 |
+|      6 |
+|      5 |
+|      5 |
++--------+
+38 rows in set (0.001 sec)
+
+  67)
+  
+  MariaDB [practice2]> select length('prachi') from employee_details where id = 2;
++------------------+
+| length('prachi') |
++------------------+
+|                6 |
++------------------+
+1 row in set (0.001 sec)
+
+68)
+
+MariaDB [practice2]> select concat(E_Name,Job_Title) from employee_details;
++---------------------------+
+| concat(E_Name,Job_Title)  |
++---------------------------+
+| setudeveloper             |
+| prachideveloper           |
+| sweetydeveloper           |
+| shrutideveloper           |
+| sanketdeveloper           |
+| surbhideveloper           |
+| jaymindeveloper           |
+| poojaManager              |
+| pravinaManager            |
+| kinjalManager             |
+| reenaProject_codinater    |
+| vidhiProject_codinater    |
+| nikitaProject_codinater   |
+| bhumikaProject_codinater  |
+| bhumikaproject_codinater  |
+| sonaliproject_codinater   |
+| darshitaproject_codinater |
+| jarnideveloper            |
+| joydeveloper              |
+| jayclerk                  |
+| jaynamclerk               |
+| harshclerk                |
+| smitclerk                 |
+| smitaclerk                |
+| shayamHR                  |
+| nidhiHR                   |
+| swatiHR                   |
+| riyaHR                    |
+| roshandesigner            |
+| roshanidesigner           |
+| uveshdesigner             |
+| laxitadesigner            |
+| manshidesigner            |
+| urvishdesigner            |
+| kamaxidesigner            |
+| anjalisystem_admin        |
+| meghasystem_admin         |
+| happysystem_admin         |
++---------------------------+
+38 rows in set (0.001 sec)
+
+
+69)
+
+MariaDB [practice2]> select substr('prachi',3,2) from employee_details where id = 2;
++----------------------+
+| substr('prachi',3,2) |
++----------------------+
+| ac                   |
++----------------------+
+1 row in set (0.001 sec)
+
+70)
+
+MariaDB [practice2]> select INSTR('developer','e') from employee_details where id =1;
++------------------------+
+| INSTR('developer','e') |
++------------------------+
+|                      2 |
++------------------------+
+1 row in set (0.001 sec)
+
+71)
+
+MariaDB [practice2]> select replace('setu','s','j')from employee_details where id = 1;
++-------------------------+
+| replace('setu','s','j') |
++-------------------------+
+| jetu                    |
++-------------------------+
+1 row in set (0.001 sec)
+
+72)
+
+MariaDB [practice2]> select Job_Title, E_Name, replace(Job_Title, 'HR', 'Boss')  from employee_details where id =25; 
++-----------+--------+----------------------------------+
+| Job_Title | E_Name | replace(Job_Title, 'HR', 'Boss') |
++-----------+--------+----------------------------------+
+| HR        | shayam | Boss                             |
++-----------+--------+----------------------------------+
+1 row in set (0.001 sec)
+
+74)
+
+
+MariaDB [practice2]> SELECT DATE_FORMAT(FROM_DAYS(DATEDIFF(now(),'2001-07-08')), '%Y')+0 AS Age;
++------+
+| Age  |
++------+
+|   21 |
++------+
+1 row in set (0.001 sec)
+
+81)
+
+MariaDB [practice2]> SELECT E_Name,Dep_NO,Job_Title FROM employee_details WHERE Dep_NO=1 AND Job_Title IN (SELECT Job_Title FROM employee_details WHERE Dep_NO=3);
++--------+--------+-----------+
+| E_Name | Dep_NO | Job_Title |
++--------+--------+-----------+
+| pooja  |      1 | developer |
++--------+--------+-----------+
+1 row in set (0.001 sec)
+
+82)
+
+select distinct(Job_Title) from employee_details where Dep_NO in (1,2);
++-----------+
+| Job_Title |
++-----------+
+| developer |
+| Manager   |
+| clerk     |
++-----------+
+3 rows in set (0.001 sec)
+
+83)
+select distinct(Job_Title) from employee_details where Dep_NO =1;
++-----------+
+| Job_Title |
++-----------+
+| developer |
+| Manager   |
++-----------+
+2 rows in set (0.001 sec)
+
+86)
+
+select E_Name from employee_details where length(E_Name)>6; 
++----------+
+| E_Name   |
++----------+
+| pravina  |
+| bhumika  |
+| bhumika  |
+| darshita |
+| roshani  |
++----------+
+5 rows in set (0.001 sec)
+
+
+87)
+select Job_Title,E_Name from employee_details where Job_Title like 'P%' and E_Name  like '%a';
++-------------------+----------+
+| Job_Title         | E_Name   |
++-------------------+----------+
+| Project_codinater | reena    |
+| Project_codinater | nikita   |
+| Project_codinater | bhumika  |
+| project_codinater | bhumika  |
+| project_codinater | darshita |
++-------------------+----------+
+5 rows in set (0.001 sec)
+
+88)
+
+select E_Name,Job_Title from employee_details where Job_Title='developer' and E_Name = 'setu';
++--------+-----------+
+| E_Name | Job_Title |
++--------+-----------+
+| setu   | developer |
++--------+-----------+
+1 row in set (0.001 sec)
+
+89)
+
+select E_Name,Salary from employee_details where (Salary+Salary*.2)>55000;
++--------+--------+
+| E_Name | Salary |
++--------+--------+
+| sweety |  60000 |
++--------+--------+
+1 row in set (0.001 sec)
+
+
+90)
+
+select E_Name ,Job_Title from employee_details ;
++----------+-------------------+
+| E_Name   | Job_Title         |
++----------+-------------------+
+| setu     | developer         |
+| prachi   | developer         |
+| sweety   | developer         |
+| shruti   | developer         |
+| sanket   | developer         |
+| surbhi   | developer         |
+| jaymin   | developer         |
+| pooja    | developer         |
+| pravina  | Manager           |
+| kinjal   | Manager           |
+| reena    | Project_codinater |
+| vidhi    | Project_codinater |
+| nikita   | Project_codinater |
+| bhumika  | Project_codinater |
+| bhumika  | project_codinater |
+| sonali   | project_codinater |
+| darshita | project_codinater |
+| jarni    | developer         |
+| joy      | developer         |
+| jay      | clerk             |
+| jaynam   | clerk             |
+| harsh    | clerk             |
+| smit     | clerk             |
+| smita    | clerk             |
+| shayam   | HR                |
+| nidhi    | HR                |
+| swati    | HR                |
+| riya     | HR                |
+| roshan   | designer          |
+| roshani  | designer          |
+| uvesh    | designer          |
+| laxita   | designer          |
+| manshi   | designer          |
+| urvish   | designer          |
+| kamaxi   | designer          |
+| anjali   | system_admin      |
+| megha    | system_admin      |
+| happy    | system_admin      |
++----------+-------------------+
+38 rows in set (0.001 sec)
+
+
+91)
+
+ select E_Name ,Job_Title from employee_details where Job_Title = 'HR';
++--------+-----------+
+| E_Name | Job_Title |
++--------+-----------+
+| shayam | HR        |
+| nidhi  | HR        |
+| swati  | HR        |
+| riya   | HR        |
++--------+-----------+
+4 rows in set (0.001 sec)
+
+
+92)
+select E_Name,Salary,Job_Title from employee_details where Salary between 20000 and 30000 and Job_Title = 'developer';
++--------+--------+-----------+
+| E_Name | Salary | Job_Title |
++--------+--------+-----------+
+| setu   |  30000 | developer |
+| shruti |  25000 | developer |
+| surbhi |  22000 | developer |
+| pooja  |  20000 | developer |
+| jarni  |  25000 | developer |
+| joy    |  25000 | developer |
++--------+--------+-----------+
+6 rows in set (0.001 sec)
+
+
+
+93)
+
+
+
+
+
+
+
+

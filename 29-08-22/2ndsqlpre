@@ -1,0 +1,1119 @@
+2)
+
+select * from employee_details  where Dep_NO = 2;
++----+--------+--------+--------+-----------+------------+-----------+
+| ID | E_Name | Dep_NO | Salary | Job_Title | Join_Date  | Commision |
++----+--------+--------+--------+-----------+------------+-----------+
+| 20 | jay    |      2 |  21000 | clerk     | 2021-06-21 | no        |
+| 21 | jaynam |      2 |  23800 | clerk     | 2031-10-11 | yes       |
+| 22 | harsh  |      2 |  33800 | clerk     | 2022-04-08 | no        |
+| 23 | smit   |      2 |  13800 | clerk     | 2021-07-05 | no        |
+| 24 | smita  |      2 |  23800 | clerk     | 2021-05-12 | yes       |
++----+--------+--------+--------+-----------+------------+-----------+
+5 rows in set (0.000 sec)
+
+
+3)
+
+select E_Name,Dep_NO from employee_details where Job_title like ('c%');
++--------+--------+
+| E_Name | Dep_NO |
++--------+--------+
+| jay    |      2 |
+| jaynam |      2 |
+| harsh  |      2 |
+| smit   |      2 |
+| smita  |      2 |
++--------+--------+
+5 rows in set (0.001 sec)
+
+
+4)
+
+select E_Name,Dep_NO from employee_details where Dep_NO>5 order by Dep_NO;
++--------+--------+
+| E_Name | Dep_NO |
++--------+--------+
+| shayam |      6 |
+| nidhi  |      6 |
+| swati  |      6 |
+| riya   |      6 |
+| anjali |      7 |
+| megha  |      7 |
+| happy  |      7 |
++--------+--------+
+7 rows in set (0.001 sec)
+
+
+5)
+
+select E_Name,Dep_NO from employee_details where Commision>Salary;
+
+6)
+
+select E_Name,Dep_NO from employee_details where Commision>Salary*0.6;
+
+7)
+select E_Name,Dep_NO,Salary from employee_details where Dep_NO = 2 and Salary>25000;
++--------+--------+--------+
+| E_Name | Dep_NO | Salary |
++--------+--------+--------+
+| harsh  |      2 |  33800 |
++--------+--------+--------+
+1 row in set (0.001 sec)
+
+8)
+E_Name,Dep_NO,Salary from employee_details where Dep_NO = 3 and Salary>29000;
++--------+--------+--------+
+| E_Name | Dep_NO | Salary |
++--------+--------+--------+
+| setu   |      3 |  30000 |
+| prachi |      3 |  35000 |
+| sweety |      3 |  60000 |
+| sanket |      3 |  42000 |
++--------+--------+--------+
+4 rows in set (0.001 sec)
+
+9)
+
+select E_Name,Dep_NO,Job_Title from employee_details where Job_Title = 'HR' or Job_Title = 'salsman' ;
++--------+--------+-----------+
+| E_Name | Dep_NO | Job_Title |
++--------+--------+-----------+
+| shayam |      6 | HR        |
+| nidhi  |      6 | HR        |
+| swati  |      6 | HR        |
+| riya   |      6 | HR        |
++--------+--------+-----------+
+4 rows in set (0.001 sec)
+
+MariaDB [practice2]> 
+
+10)
+
+select E_Name,Dep_NO,Job_Title from employee_details where Dep_NO != 1;
++----------+--------+-------------------+
+| E_Name   | Dep_NO | Job_Title         |
++----------+--------+-------------------+
+| setu     |      3 | developer         |
+| prachi   |      3 | developer         |
+| sweety   |      3 | developer         |
+| shruti   |      3 | developer         |
+| sanket   |      3 | developer         |
+| surbhi   |      3 | developer         |
+| jaymin   |      3 | developer         |
+| reena    |      5 | Project_codinater |
+| vidhi    |      5 | Project_codinater |
+| nikita   |      5 | Project_codinater |
+| bhumika  |      5 | Project_codinater |
+| bhumika  |      5 | project_codinater |
+| sonali   |      5 | project_codinater |
+| darshita |      5 | project_codinater |
+| jarni    |      3 | developer         |
+| joy      |      3 | developer         |
+| jay      |      2 | clerk             |
+| jaynam   |      2 | clerk             |
+| harsh    |      2 | clerk             |
+| smit     |      2 | clerk             |
+| smita    |      2 | clerk             |
+| shayam   |      6 | HR                |
+| nidhi    |      6 | HR                |
+| swati    |      6 | HR                |
+| riya     |      6 | HR                |
+| roshan   |      4 | designer          |
+| roshani  |      4 | designer          |
+| uvesh    |      4 | designer          |
+| laxita   |      4 | designer          |
+| manshi   |      4 | designer          |
+| urvish   |      4 | designer          |
+| kamaxi   |      4 | designer          |
+| anjali   |      7 | system_admin      |
+| megha    |      7 | system_admin      |
+| happy    |      7 | system_admin      |
++----------+--------+-------------------+
+
+
+11)
+select E_Name,Dep_NO,Job_Title from employee_details where Dep_NO=1 and JOb_Title in ('Manager','developer');
++---------+--------+-----------+
+| E_Name  | Dep_NO | Job_Title |
++---------+--------+-----------+
+| pooja   |      1 | developer |
+| pravina |      1 | Manager   |
+| kinjal  |      1 | Manager   |
++---------+--------+-----------+
+3 rows in set (0.001 sec)
+
+12)
+
+select * from empdetails where jobtitle = 'manager' or jobtitle= 'clerk'  and depid=2;
++-------+-----------+----------+
+| depid | depname   | jobtitle |
++-------+-----------+----------+
+|     1 | it        | manager  |
+|     2 | marketing | clerk    |
+|     2 | marketing | manager  |
++-------+-----------+----------+
+3 rows in set (0.001 sec)
+
+
+13)
+
+ select * from dep where jobtitle = 'manager'and depid =2 or jobtitle= 'clerk'  and depid=2 or jobtitle not in ('manager','clerk') and salary>28000;
++-------+-----------+--------+------------------+----+
+| depid | depname   | salary | jobtitle         | no |
++-------+-----------+--------+------------------+----+
+|     1 | it        | 350000 | developer        |  2 |
+|     2 | marketing |  45000 | graphic deiginer |  4 |
+|     2 | marketing |  54000 | clerk            |  5 |
+|     2 | marketing |  21000 | manager          |  6 |
++-------+-----------+--------+------------------+----+
+4 rows in set (0.001 sec)
+
+
+14)
+
+ select * from dep where depid =2 and jobtitle not in ('manager','clerk');
++-------+-----------+--------+------------------+----+
+| depid | depname   | salary | jobtitle         | no |
++-------+-----------+--------+------------------+----+
+|     2 | marketing |  45000 | graphic deiginer |  4 |
++-------+-----------+--------+------------------+----+
+1 row in set (0.001 sec)
+
+15)
+ select * from dep where salary between 25000 and 55000;
++-------+-----------+--------+------------------+----+
+| depid | depname   | salary | jobtitle         | no |
++-------+-----------+--------+------------------+----+
+|     1 | it        |  26000 | manager          |  1 |
+|     1 | it        |  25000 | hr               |  3 |
+|     2 | marketing |  45000 | graphic deiginer |  4 |
+|     2 | marketing |  54000 | clerk            |  5 |
+|     3 | finance   |  28000 | salsmen          |  7 |
++-------+-----------+--------+------------------+----+
+5 rows in set (0.001 sec)
+
+
+16)
+select * from dep where jobtitle in ('clerk','salsmen','developer');
++-------+-----------+--------+-----------+----+
+| depid | depname   | salary | jobtitle  | no |
++-------+-----------+--------+-----------+----+
+|     1 | it        | 350000 | developer |  2 |
+|     2 | marketing |  54000 | clerk     |  5 |
+|     3 | finance   |  28000 | salsmen   |  7 |
++-------+-----------+--------+-----------+----+
+3 rows in set (0.001 sec)
+
+17)
+
+select * from dep where jobtitle not in ('clerk','salsmen','developer');
++-------+-----------+--------+------------------+----+
+| depid | depname   | salary | jobtitle         | no |
++-------+-----------+--------+------------------+----+
+|     1 | it        |  26000 | manager          |  1 |
+|     1 | it        |  25000 | hr               |  3 |
+|     2 | marketing |  45000 | graphic deiginer |  4 |
+|     2 | marketing |  21000 | manager          |  6 |
++-------+-----------+--------+------------------+----+
+
+18)
+
+ select * from employee_details where commision != 'no' and Dep_NO between 1 and 3;
++----+---------+--------+--------+-----------+------------+-----------+
+| ID | E_Name  | Dep_NO | Salary | Job_Title | Join_Date  | Commision |
++----+---------+--------+--------+-----------+------------+-----------+
+|  1 | setu    |      3 |  30000 | developer | 2021-07-15 | yes       |
+|  3 | sweety  |      3 |  60000 | developer | 2017-06-12 | yes       |
+|  5 | sanket  |      3 |  42000 | developer | 0001-01-17 | yes       |
+|  6 | surbhi  |      3 |  22000 | developer | 2018-05-12 | yes       |
+|  9 | pravina |      1 |  25000 | Manager   | 0002-04-12 | yes       |
+| 10 | kinjal  |      1 |  15000 | Manager   | 0004-06-17 | yes       |
+| 18 | jarni   |      3 |  25000 | developer | 2011-02-12 | yes       |
+| 21 | jaynam  |      2 |  23800 | clerk     | 2031-10-11 | yes       |
+| 24 | smita   |      2 |  23800 | clerk     | 2021-05-12 | yes       |
++----+---------+--------+--------+-----------+------------+-----------+
+9 rows in set (0.001 sec)
+
+
+19)
+
+select * from employee_details where commision = 'no' and Dep_NO between 1 and 3;
++----+--------+--------+--------+-----------+------------+-----------+
+| ID | E_Name | Dep_NO | Salary | Job_Title | Join_Date  | Commision |
++----+--------+--------+--------+-----------+------------+-----------+
+|  2 | prachi |      3 |  35000 | developer | 2027-07-12 | no        |
+|  4 | shruti |      3 |  25000 | developer | 0007-04-10 | no        |
+|  7 | jaymin |      3 |  12000 | developer | 0008-09-10 | No        |
+|  8 | pooja  |      1 |  20000 | developer | 0003-03-13 | No        |
+| 19 | joy    |      3 |  25000 | developer | 2021-06-11 | no        |
+| 20 | jay    |      2 |  21000 | clerk     | 2021-06-21 | no        |
+| 22 | harsh  |      2 |  33800 | clerk     | 2022-04-08 | no        |
+| 23 | smit   |      2 |  13800 | clerk     | 2021-07-05 | no        |
++----+--------+--------+--------+-----------+------------+-----------+
+8 rows in set (0.001 sec)
+
+20)
+
+select * from employee_details where commision = 'no' or commision>2000;
++----+----------+--------+--------+-------------------+------------+-----------+
+| ID | E_Name   | Dep_NO | Salary | Job_Title         | Join_Date  | Commision |
++----+----------+--------+--------+-------------------+------------+-----------+
+|  2 | prachi   |      3 |  35000 | developer         | 2027-07-12 | no        |
+|  4 | shruti   |      3 |  25000 | developer         | 0007-04-10 | no        |
+|  5 | sanket   |      3 |  42000 | developer         | 0001-01-17 | 3000      |
+|  7 | jaymin   |      3 |  12000 | developer         | 0008-09-10 | No        |
+|  8 | pooja    |      1 |  20000 | developer         | 0003-03-13 | No        |
+| 10 | kinjal   |      1 |  15000 | Manager           | 0004-06-17 | 2100      |
+| 11 | reena    |      5 |  23500 | Project_codinater | 0005-05-11 | no        |
+| 12 | vidhi    |      5 |  33500 | Project_codinater | 0001-08-10 | no        |
+| 15 | bhumika  |      5 |  20500 | project_codinater | 2002-02-12 | 2100      |
+| 16 | sonali   |      5 |  27500 | project_codinater | 2012-09-18 | no        |
+| 17 | darshita |      5 |  27500 | project_codinater | 2012-09-17 | no        |
+| 19 | joy      |      3 |  25000 | developer         | 2021-06-11 | no        |
+| 20 | jay      |      2 |  21000 | clerk             | 2021-06-21 | no        |
+| 22 | harsh    |      2 |  33800 | clerk             | 2022-04-08 | no        |
+| 23 | smit     |      2 |  13800 | clerk             | 2021-07-05 | no        |
+| 27 | swati    |      6 |  39800 | HR                | 0005-07-17 | no        |
+| 28 | riya     |      6 |  21800 | HR                | 2015-01-11 | no        |
+| 29 | roshan   |      4 |  21800 | designer          | 2015-01-11 | no        |
+| 30 | roshani  |      4 |  11800 | designer          | 0001-12-11 | no        |
+| 35 | kamaxi   |      4 |  23000 | designer          | 0001-02-14 | no        |
+| 36 | anjali   |      7 |  23000 | system_admin      | 0003-02-14 | no        |
+| 37 | megha    |      7 |  26000 | system_admin      | 2012-07-11 | no        |
++----+----------+--------+--------+-------------------+------------+-----------+
+22 rows in set, 5 warnings (0.001 sec)
+
+
+21)
+
+select E_Name,commision, (salary+250) from employee_details where commision ='no';
++----------+-----------+--------------+
+| E_Name   | commision | (salary+250) |
++----------+-----------+--------------+
+| prachi   | no        |        35250 |
+| shruti   | no        |        25250 |
+| jaymin   | No        |        12250 |
+| pooja    | No        |        20250 |
+| reena    | no        |        23750 |
+| vidhi    | no        |        33750 |
+| sonali   | no        |        27750 |
+| darshita | no        |        27750 |
+| joy      | no        |        25250 |
+| jay      | no        |        21250 |
+| harsh    | no        |        34050 |
+| smit     | no        |        14050 |
+| swati    | no        |        40050 |
+| riya     | no        |        22050 |
+| roshan   | no        |        22050 |
+| roshani  | no        |        12050 |
+| kamaxi   | no        |        23250 |
+| anjali   | no        |        23250 |
+| megha    | no        |        26250 |
++----------+-----------+--------------+
+19 rows in set (0.001 sec)
+
+22)
+
+select * from  employee_details where salary>40000;
++----+--------+--------+--------+-----------+------------+-----------+
+| ID | E_Name | Dep_NO | Salary | Job_Title | Join_Date  | Commision |
++----+--------+--------+--------+-----------+------------+-----------+
+|  3 | sweety |      3 |  60000 | developer | 2017-06-12 | 200       |
+|  5 | sanket |      3 |  42000 | developer | 0001-01-17 | 3000      |
++----+--------+--------+--------+-----------+------------+-----------+
+2 rows in set (0.001 sec)
+
+23)
+ select * from  employee_details where E_Name like '%m'; 
++----+--------+--------+--------+-----------+------------+-----------+
+| ID | E_Name | Dep_NO | Salary | Job_Title | Join_Date  | Commision |
++----+--------+--------+--------+-----------+------------+-----------+
+| 21 | jaynam |      2 |  23800 | clerk     | 2031-10-11 | yes       |
+| 25 | shayam |      6 |  22800 | HR        | 2021-05-12 | 1700      |
++----+--------+--------+--------+-----------+------------+-----------+
+2 rows in set (0.001 sec)
+
+24)
+
+select * from  employee_details where E_Name like '%m%';
++----+---------+--------+--------+-------------------+------------+-----------+
+| ID | E_Name  | Dep_NO | Salary | Job_Title         | Join_Date  | Commision |
++----+---------+--------+--------+-------------------+------------+-----------+
+|  7 | jaymin  |      3 |  12000 | developer         | 0008-09-10 | No        |
+| 14 | bhumika |      5 |  23500 | Project_codinater | 2020-01-08 | 1700      |
+| 15 | bhumika |      5 |  20500 | project_codinater | 2002-02-12 | 2100      |
+| 21 | jaynam  |      2 |  23800 | clerk             | 2031-10-11 | yes       |
+| 23 | smit    |      2 |  13800 | clerk             | 2021-07-05 | no        |
+| 24 | smita   |      2 |  23800 | clerk             | 2021-05-12 | 600       |
+| 25 | shayam  |      6 |  22800 | HR                | 2021-05-12 | 1700      |
+| 33 | manshi  |      4 |  39000 | designer          | 2021-02-17 | yes       |
+| 35 | kamaxi  |      4 |  23000 | designer          | 0001-02-14 | no        |
+| 37 | megha   |      7 |  26000 | system_admin      | 2012-07-11 | no        |
++----+---------+--------+--------+-------------------+------------+-----------+
+10 rows in set (0.001 sec)
+
+25)
+
+select * from  employee_details where E_Name like '__e%' and length(E_Name)>=5 ;
++----+--------+--------+--------+-------------------+------------+-----------+
+| ID | E_Name | Dep_NO | Salary | Job_Title         | Join_Date  | Commision |
++----+--------+--------+--------+-------------------+------------+-----------+
+|  3 | sweety |      3 |  60000 | developer         | 2017-06-12 | 200       |
+| 11 | reena  |      5 |  23500 | Project_codinater | 0005-05-11 | no        |
+| 31 | uvesh  |      4 |  12900 | designer          | 0001-02-09 | 2000      |
++----+--------+--------+--------+-------------------+------------+-----------+
+3 rows in set (0.001 sec)
+
+
+26)
+
+ select * from employee_details where MONTH(Join_Date) = 2;
++----+---------+--------+--------+-------------------+------------+-----------+
+| ID | E_Name  | Dep_NO | Salary | Job_Title         | Join_Date  | Commision |
++----+---------+--------+--------+-------------------+------------+-----------+
+| 15 | bhumika |      5 |  20500 | project_codinater | 2002-02-12 | 2100      |
+| 18 | jarni   |      3 |  25000 | developer         | 2011-02-12 | 700       |
+| 31 | uvesh   |      4 |  12900 | designer          | 0001-02-09 | 2000      |
+| 32 | laxita  |      4 |  29000 | designer          | 2019-02-07 | yes       |
+| 33 | manshi  |      4 |  39000 | designer          | 2021-02-17 | yes       |
+| 34 | urvish  |      4 |  19000 | designer          | 2021-02-12 | yes       |
+| 35 | kamaxi  |      4 |  23000 | designer          | 0001-02-14 | no        |
+| 36 | anjali  |      7 |  23000 | system_admin      | 0003-02-14 | no        |
++----+---------+--------+--------+-------------------+------------+-----------+
+8 rows in set (0.001 sec)
+
+
+27)
+MariaDB [practice2]> select * from employee_details where Join_Date=last_day(Join_Date);
++----+--------+--------+--------+-----------+------------+-----------+
+| ID | E_Name | Dep_NO | Salary | Job_Title | Join_Date  | Commision |
++----+--------+--------+--------+-----------+------------+-----------+
+|  4 | shruti |      3 |  25000 | developer | 2007-04-30 | no        |
++----+--------+--------+--------+-----------+------------+-----------+
+1 row in set (0.001 sec)
+
+
+28)
+
+select ID, E_Name, Join_Date from employee_details where year(join_date)<=2016;
++----+----------+------------+
+| ID | E_Name   | Join_Date  |
++----+----------+------------+
+|  4 | shruti   | 2007-04-30 |
+|  5 | sanket   | 0001-01-17 |
+|  7 | jaymin   | 0008-09-10 |
+|  8 | pooja    | 0003-03-13 |
+|  9 | pravina  | 0002-04-12 |
+| 10 | kinjal   | 0004-06-17 |
+| 11 | reena    | 0005-05-11 |
+| 12 | vidhi    | 0001-08-10 |
+| 15 | bhumika  | 2002-02-12 |
+| 16 | sonali   | 2012-09-18 |
+| 17 | darshita | 2012-09-17 |
+| 18 | jarni    | 2011-02-12 |
+| 26 | nidhi    | 0001-05-10 |
+| 27 | swati    | 0005-07-17 |
+| 28 | riya     | 2015-01-11 |
+| 29 | roshan   | 2015-01-11 |
+| 30 | roshani  | 0001-12-11 |
+| 31 | uvesh    | 0001-02-09 |
+| 35 | kamaxi   | 0001-02-14 |
+| 36 | anjali   | 0003-02-14 |
+| 37 | megha    | 2012-07-11 |
+| 38 | happy    | 0002-07-01 |
++----+----------+------------+
+22 rows in set (0.001 sec)
+
+
+29)
+
+ select ID, E_Name, Join_Date from employee_details where Job_Title = 'developer' and year(join_date)=2003;
++----+--------+------------+
+| ID | E_Name | Join_Date  |
++----+--------+------------+
+|  7 | jaymin | 2003-09-09 |
+|  8 | pooja  | 2003-03-24 |
++----+--------+------------+
+2 rows in set (0.001 sec)
+
+30)
+
+select CONCAT(E_Name ,'  ', ID) as ename from employee_details where id between 1 and 10;
++------------+
+| ename      |
++------------+
+| setu  1    |
+| prachi  2  |
+| sweety  3  |
+| shruti  4  |
+| sanket  5  |
+| surbhi  6  |
+| jaymin  7  |
+| pooja  8   |
+| pravina  9 |
+| kinjal  10 |
++------------+
+10 rows in set (0.001 sec)
+
+31)
+
+select lpad(E_Name,15,'.') from employee_details where id between 1 and 5;
++---------------------+
+| lpad(E_Name,15,'.') |
++---------------------+
+| ...........setu     |
+| .........prachi     |
+| .........sweety     |
+| .........shruti     |
+| .........sanket     |
++---------------------+
+5 rows in set (0.001 sec)
+
+
+32)
+
+select rpad(E_Name,15,'*') from employee_details where id between 1 and 5;
++---------------------+
+| rpad(E_Name,15,'*') |
++---------------------+
+| setu***********     |
+| prachi*********     |
+| sweety*********     |
+| shruti*********     |
+| sanket*********     |
++---------------------+
+5 rows in set (0.001 sec)
+
+
+33)
+
+ select E_Name from employee_details where E_Name not like('s%');
++----------+
+| E_Name   |
++----------+
+| prachi   |
+| jaymin   |
+| pooja    |
+| pravina  |
+| kinjal   |
+| reena    |
+| vidhi    |
+| nikita   |
+| bhumika  |
+| bhumika  |
+| darshita |
+| jarni    |
+| joy      |
+| jay      |
+| jaynam   |
+| harsh    |
+| nidhi    |
+| riya     |
+| roshan   |
+| roshani  |
+| uvesh    |
+| laxita   |
+| manshi   |
+| urvish   |
+| kamaxi   |
+| anjali   |
+| megha    |
+| happy    |
++----------+
+28 rows in set (0.001 sec)
+
+
+34)
+
+select E_Name from employee_details where E_Name not like('%a');
++---------+
+| E_Name  |
++---------+
+| setu    |
+| prachi  |
+| sweety  |
+| shruti  |
+| sanket  |
+| surbhi  |
+| jaymin  |
+| kinjal  |
+| vidhi   |
+| sonali  |
+| jarni   |
+| joy     |
+| jay     |
+| jaynam  |
+| harsh   |
+| smit    |
+| shayam  |
+| nidhi   |
+| swati   |
+| roshan  |
+| roshani |
+| uvesh   |
+| manshi  |
+| urvish  |
+| kamaxi  |
+| anjali  |
+| happy   |
++---------+
+27 rows in set (0.001 sec)
+
+35)
+
+select  substr(E_Name,1,2) as first2character,reverse(substr(reverse(E_Name),1,2)) as last2character from employee_details; 
++-----------------+----------------+
+| first2character | last2character |
++-----------------+----------------+
+| se              | tu             |
+| pr              | hi             |
+| sw              | ty             |
+| sh              | ti             |
+| sa              | et             |
+| su              | hi             |
+| ja              | in             |
+| po              | ja             |
+| pr              | na             |
+| ki              | al             |
+| re              | na             |
+| vi              | hi             |
+| ni              | ta             |
+| bh              | ka             |
+| bh              | ka             |
+| so              | li             |
+| da              | ta             |
+| ja              | ni             |
+| jo              | oy             |
+| ja              | ay             |
+| ja              | am             |
+| ha              | sh             |
+| sm              | it             |
+| sm              | ta             |
+| sh              | am             |
+| ni              | hi             |
+| sw              | ti             |
+| ri              | ya             |
+| ro              | an             |
+| ro              | ni             |
+| uv              | sh             |
+| la              | ta             |
+| ma              | hi             |
+| ur              | sh             |
+| ka              | xi             |
+| an              | li             |
+| me              | ha             |
+| ha              | py             |
++-----------------+----------------+
+38 rows in set (0.001 sec)
+
+
+36)--
+37)--
+38)
+select Salary,ceil(salary/1000)*1000 from employee_details;
++--------+------------------------+
+| Salary | ceil(salary/1000)*1000 |
++--------+------------------------+
+|  30000 |                  30000 |
+|  35000 |                  35000 |
+|  60000 |                  60000 |
+|  25000 |                  25000 |
+|  42000 |                  42000 |
+|  22000 |                  22000 |
+|  12000 |                  12000 |
+|  20000 |                  20000 |
+|  25000 |                  25000 |
+|  15000 |                  15000 |
+|  23500 |                  24000 |
+|  33500 |                  34000 |
+|  13500 |                  14000 |
+|  23500 |                  24000 |
+|  20500 |                  21000 |
+|  27500 |                  28000 |
+|  27500 |                  28000 |
+|  25000 |                  25000 |
+|  25000 |                  25000 |
+|  21000 |                  21000 |
+|  23800 |                  24000 |
+|  33800 |                  34000 |
+|  13800 |                  14000 |
+|  23800 |                  24000 |
+|  22800 |                  23000 |
+|  29800 |                  30000 |
+|  39800 |                  40000 |
+|  21800 |                  22000 |
+|  21800 |                  22000 |
+|  11800 |                  12000 |
+|  12900 |                  13000 |
+|  29000 |                  29000 |
+|  39000 |                  39000 |
+|  19000 |                  19000 |
+|  23000 |                  23000 |
+|  23000 |                  23000 |
+|  26000 |                  26000 |
+|  29000 |                  29000 |
++--------+------------------------+
+38 rows in set (0.001 sec)
+
+
+39)---
+40)
+select E_Name,Join_Date,Job_Title, TIMESTAMPDIFF(YEAR, Join_Date, CURDATE()) as year from employee_details ;
++----------+------------+-------------------+------+
+| E_Name   | Join_Date  | Job_Title         | year |
++----------+------------+-------------------+------+
+| setu     | 2021-07-15 | developer         |    1 |
+| prachi   | 2017-07-12 | developer         |    5 |
+| sweety   | 2017-06-12 | developer         |    5 |
+| shruti   | 2007-04-30 | developer         |   15 |
+| sanket   | 2001-01-10 | developer         |   21 |
+| surbhi   | 2018-05-12 | developer         |    4 |
+| jaymin   | 2003-09-09 | developer         |   18 |
+| pooja    | 2003-03-24 | developer         |   19 |
+| pravina  | 2010-04-23 | Manager           |   12 |
+| kinjal   | 2013-06-25 | Manager           |    9 |
+| reena    | 2014-05-08 | Project_codinater |    8 |
+| vidhi    | 2011-08-11 | Project_codinater |   11 |
+| nikita   | 2021-03-09 | Project_codinater |    1 |
+| bhumika  | 2020-01-08 | Project_codinater |    2 |
+| bhumika  | 2002-02-12 | project_codinater |   20 |
+| sonali   | 2012-09-18 | project_codinater |    9 |
+| darshita | 2012-09-17 | project_codinater |    9 |
+| jarni    | 2011-02-12 | developer         |   11 |
+| joy      | 2021-06-11 | developer         |    1 |
+| jay      | 2021-06-21 | clerk             |    1 |
+| jaynam   | 2021-10-15 | clerk             |    0 |
+| harsh    | 2022-04-08 | clerk             |    0 |
+| smit     | 2021-07-05 | clerk             |    1 |
+| smita    | 2021-05-12 | clerk             |    1 |
+| shayam   | 2021-05-12 | HR                |    1 |
+| nidhi    | 2011-05-11 | HR                |   11 |
+| swati    | 2015-07-09 | HR                |    7 |
+| riya     | 2015-01-11 | HR                |    7 |
+| roshan   | 2015-01-11 | designer          |    7 |
+| roshani  | 2011-12-26 | designer          |   10 |
+| uvesh    | 2010-02-16 | designer          |   12 |
+| laxita   | 2019-02-07 | designer          |    3 |
+| manshi   | 2021-02-17 | designer          |    1 |
+| urvish   | 2021-02-12 | designer          |    1 |
+| kamaxi   | 2009-02-19 | designer          |   13 |
+| anjali   | 2003-02-14 | system_admin      |   19 |
+| megha    | 2012-07-11 | system_admin      |   10 |
+| happy    | 2002-07-12 | system_admin      |   20 |
++----------+------------+-------------------+------+
+
+41)---
+
+select E_Name,Join_Date,Job_Title, TIMESTAMPDIFF(DAY, Join_Date, CURDATE()) as days from employee_details ;
++----------+------------+-------------------+------+
+| E_Name   | Join_Date  | Job_Title         | days |
++----------+------------+-------------------+------+
+| setu     | 2021-07-15 | developer         |  411 |
+| prachi   | 2017-07-12 | developer         | 1875 |
+| sweety   | 2017-06-12 | developer         | 1905 |
+| shruti   | 2007-04-30 | developer         | 5601 |
+| sanket   | 2001-01-10 | developer         | 7902 |
+| surbhi   | 2018-05-12 | developer         | 1571 |
+| jaymin   | 2003-09-09 | developer         | 6930 |
+| pooja    | 2003-03-24 | developer         | 7099 |
+| pravina  | 2010-04-23 | Manager           | 4512 |
+| kinjal   | 2013-06-25 | Manager           | 3353 |
+| reena    | 2014-05-08 | Project_codinater | 3036 |
+| vidhi    | 2011-08-11 | Project_codinater | 4037 |
+| nikita   | 2021-03-09 | Project_codinater |  539 |
+| bhumika  | 2020-01-08 | Project_codinater |  965 |
+| bhumika  | 2002-02-12 | project_codinater | 7504 |
+| sonali   | 2012-09-18 | project_codinater | 3633 |
+| darshita | 2012-09-17 | project_codinater | 3634 |
+| jarni    | 2011-02-12 | developer         | 4217 |
+| joy      | 2021-06-11 | developer         |  445 |
+| jay      | 2021-06-21 | clerk             |  435 |
+| jaynam   | 2021-10-15 | clerk             |  319 |
+| harsh    | 2022-04-08 | clerk             |  144 |
+| smit     | 2021-07-05 | clerk             |  421 |
+| smita    | 2021-05-12 | clerk             |  475 |
+| shayam   | 2021-05-12 | HR                |  475 |
+| nidhi    | 2011-05-11 | HR                | 4129 |
+| swati    | 2015-07-09 | HR                | 2609 |
+| riya     | 2015-01-11 | HR                | 2788 |
+| roshan   | 2015-01-11 | designer          | 2788 |
+| roshani  | 2011-12-26 | designer          | 3900 |
+| uvesh    | 2010-02-16 | designer          | 4578 |
+| laxita   | 2019-02-07 | designer          | 1300 |
+| manshi   | 2021-02-17 | designer          |  559 |
+| urvish   | 2021-02-12 | designer          |  564 |
+| kamaxi   | 2009-02-19 | designer          | 4940 |
+| anjali   | 2003-02-14 | system_admin      | 7137 |
+| megha    | 2012-07-11 | system_admin      | 3702 |
+| happy    | 2002-07-12 | system_admin      | 7354 |
++----------+------------+-------------------+------+
+38 rows in set (0.001 sec)
+
+
+42)
+
+select E_Name,Join_Date,Job_Title, TIMESTAMPDIFF(MONTH, Join_Date, CURDATE()) as Months from employee_details ;
++----------+------------+-------------------+--------+
+| E_Name   | Join_Date  | Job_Title         | Months |
++----------+------------+-------------------+--------+
+| setu     | 2021-07-15 | developer         |     13 |
+| prachi   | 2017-07-12 | developer         |     61 |
+| sweety   | 2017-06-12 | developer         |     62 |
+| shruti   | 2007-04-30 | developer         |    184 |
+| sanket   | 2001-01-10 | developer         |    259 |
+| surbhi   | 2018-05-12 | developer         |     51 |
+| jaymin   | 2003-09-09 | developer         |    227 |
+| pooja    | 2003-03-24 | developer         |    233 |
+| pravina  | 2010-04-23 | Manager           |    148 |
+| kinjal   | 2013-06-25 | Manager           |    110 |
+| reena    | 2014-05-08 | Project_codinater |     99 |
+| vidhi    | 2011-08-11 | Project_codinater |    132 |
+| nikita   | 2021-03-09 | Project_codinater |     17 |
+| bhumika  | 2020-01-08 | Project_codinater |     31 |
+| bhumika  | 2002-02-12 | project_codinater |    246 |
+| sonali   | 2012-09-18 | project_codinater |    119 |
+| darshita | 2012-09-17 | project_codinater |    119 |
+| jarni    | 2011-02-12 | developer         |    138 |
+| joy      | 2021-06-11 | developer         |     14 |
+| jay      | 2021-06-21 | clerk             |     14 |
+| jaynam   | 2021-10-15 | clerk             |     10 |
+| harsh    | 2022-04-08 | clerk             |      4 |
+| smit     | 2021-07-05 | clerk             |     13 |
+| smita    | 2021-05-12 | clerk             |     15 |
+| shayam   | 2021-05-12 | HR                |     15 |
+| nidhi    | 2011-05-11 | HR                |    135 |
+| swati    | 2015-07-09 | HR                |     85 |
+| riya     | 2015-01-11 | HR                |     91 |
+| roshan   | 2015-01-11 | designer          |     91 |
+| roshani  | 2011-12-26 | designer          |    128 |
+| uvesh    | 2010-02-16 | designer          |    150 |
+| laxita   | 2019-02-07 | designer          |     42 |
+| manshi   | 2021-02-17 | designer          |     18 |
+| urvish   | 2021-02-12 | designer          |     18 |
+| kamaxi   | 2009-02-19 | designer          |    162 |
+| anjali   | 2003-02-14 | system_admin      |    234 |
+| megha    | 2012-07-11 | system_admin      |    121 |
+| happy    | 2002-07-12 | system_admin      |    241 |
++----------+------------+-------------------+--------+
+38 rows in set (0.001 sec)
+
+
+43)
+
+select * from employee_details order by E_Name;
++----+----------+--------+--------+-------------------+------------+-----------+
+| ID | E_Name   | Dep_NO | Salary | Job_Title         | Join_Date  | Commision |
++----+----------+--------+--------+-------------------+------------+-----------+
+| 36 | anjali   |      7 |  23000 | system_admin      | 0003-02-14 | no        |
+| 15 | bhumika  |      5 |  20500 | project_codinater | 2002-02-12 | 2100      |
+| 14 | bhumika  |      5 |  23500 | Project_codinater | 2020-01-08 | 1700      |
+| 17 | darshita |      5 |  27500 | project_codinater | 2012-09-17 | no        |
+| 38 | happy    |      7 |  29000 | system_admin      | 0002-07-01 | yes       |
+| 22 | harsh    |      2 |  33800 | clerk             | 2022-04-08 | no        |
+| 18 | jarni    |      3 |  25000 | developer         | 2011-02-12 | 700       |
+| 20 | jay      |      2 |  21000 | clerk             | 2021-06-21 | no        |
+|  7 | jaymin   |      3 |  12000 | developer         | 2003-09-09 | No        |
+| 21 | jaynam   |      2 |  23800 | clerk             | 2031-10-11 | yes       |
+| 19 | joy      |      3 |  25000 | developer         | 2021-06-11 | no        |
+| 35 | kamaxi   |      4 |  23000 | designer          | 0001-02-14 | no        |
+| 10 | kinjal   |      1 |  15000 | Manager           | 0004-06-17 | 2100      |
+| 32 | laxita   |      4 |  29000 | designer          | 2019-02-07 | yes       |
+| 33 | manshi   |      4 |  39000 | designer          | 2021-02-17 | yes       |
+| 37 | megha    |      7 |  26000 | system_admin      | 2012-07-11 | no        |
+| 26 | nidhi    |      6 |  29800 | HR                | 0001-05-10 | 1100      |
+| 13 | nikita   |      5 |  13500 | Project_codinater | 2021-03-09 | 800       |
+|  8 | pooja    |      1 |  20000 | developer         | 2003-03-24 | No        |
+|  2 | prachi   |      3 |  35000 | developer         | 2027-07-12 | no        |
+|  9 | pravina  |      1 |  25000 | Manager           | 0002-04-12 | 1500      |
+| 11 | reena    |      5 |  23500 | Project_codinater | 0005-05-11 | no        |
+| 28 | riya     |      6 |  21800 | HR                | 2015-01-11 | no        |
+| 29 | roshan   |      4 |  21800 | designer          | 2015-01-11 | no        |
+| 30 | roshani  |      4 |  11800 | designer          | 0001-12-11 | no        |
+|  5 | sanket   |      3 |  42000 | developer         | 2001-01-10 | 3000      |
+|  1 | setu     |      3 |  30000 | developer         | 2021-07-15 | 1000      |
+| 25 | shayam   |      6 |  22800 | HR                | 2021-05-12 | 1700      |
+|  4 | shruti   |      3 |  25000 | developer         | 2007-04-30 | no        |
+| 23 | smit     |      2 |  13800 | clerk             | 2021-07-05 | no        |
+| 24 | smita    |      2 |  23800 | clerk             | 2021-05-12 | 600       |
+| 16 | sonali   |      5 |  27500 | project_codinater | 2012-09-18 | no        |
+|  6 | surbhi   |      3 |  22000 | developer         | 2018-05-12 | 1100      |
+| 27 | swati    |      6 |  39800 | HR                | 0005-07-17 | no        |
+|  3 | sweety   |      3 |  60000 | developer         | 2017-06-12 | 200       |
+| 34 | urvish   |      4 |  19000 | designer          | 2021-02-12 | yes       |
+| 31 | uvesh    |      4 |  12900 | designer          | 0001-02-09 | 2000      |
+| 12 | vidhi    |      5 |  33500 | Project_codinater | 0001-08-10 | no        |
++----+----------+--------+--------+-------------------+------------+-----------+
+38 rows in set (0.090 sec)
+
+
+44)
+
+select E_Name,Join_Date from employee_details order by Join_Date;
++----------+------------+
+| E_Name   | Join_Date  |
++----------+------------+
+| uvesh    | 0001-02-09 |
+| kamaxi   | 0001-02-14 |
+| nidhi    | 0001-05-10 |
+| vidhi    | 0001-08-10 |
+| roshani  | 0001-12-11 |
+| pravina  | 0002-04-12 |
+| happy    | 0002-07-01 |
+| anjali   | 0003-02-14 |
+| kinjal   | 0004-06-17 |
+| reena    | 0005-05-11 |
+| swati    | 0005-07-17 |
+| sanket   | 2001-01-10 |
+| bhumika  | 2002-02-12 |
+| pooja    | 2003-03-24 |
+| jaymin   | 2003-09-09 |
+| shruti   | 2007-04-30 |
+| jarni    | 2011-02-12 |
+| megha    | 2012-07-11 |
+| darshita | 2012-09-17 |
+| sonali   | 2012-09-18 |
+| roshan   | 2015-01-11 |
+| riya     | 2015-01-11 |
+| sweety   | 2017-06-12 |
+| surbhi   | 2018-05-12 |
+| laxita   | 2019-02-07 |
+| bhumika  | 2020-01-08 |
+| urvish   | 2021-02-12 |
+| manshi   | 2021-02-17 |
+| nikita   | 2021-03-09 |
+| shayam   | 2021-05-12 |
+| smita    | 2021-05-12 |
+| joy      | 2021-06-11 |
+| jay      | 2021-06-21 |
+| smit     | 2021-07-05 |
+| setu     | 2021-07-15 |
+| harsh    | 2022-04-08 |
+| prachi   | 2027-07-12 |
+| jaynam   | 2031-10-11 |
++----------+------------+
+38 rows in set (0.001 sec)
+
+
+45)
+select E_Name,Job_Title,Salary from employee_details order by Salary,Job_Title;
++----------+-------------------+--------+
+| E_Name   | Job_Title         | Salary |
++----------+-------------------+--------+
+| roshani  | designer          |  11800 |
+| jaymin   | developer         |  12000 |
+| uvesh    | designer          |  12900 |
+| nikita   | Project_codinater |  13500 |
+| smit     | clerk             |  13800 |
+| kinjal   | Manager           |  15000 |
+| urvish   | designer          |  19000 |
+| pooja    | developer         |  20000 |
+| bhumika  | project_codinater |  20500 |
+| jay      | clerk             |  21000 |
+| roshan   | designer          |  21800 |
+| riya     | HR                |  21800 |
+| surbhi   | developer         |  22000 |
+| shayam   | HR                |  22800 |
+| kamaxi   | designer          |  23000 |
+| anjali   | system_admin      |  23000 |
+| reena    | Project_codinater |  23500 |
+| bhumika  | Project_codinater |  23500 |
+| jaynam   | clerk             |  23800 |
+| smita    | clerk             |  23800 |
+| jarni    | developer         |  25000 |
+| joy      | developer         |  25000 |
+| shruti   | developer         |  25000 |
+| pravina  | Manager           |  25000 |
+| megha    | system_admin      |  26000 |
+| sonali   | project_codinater |  27500 |
+| darshita | project_codinater |  27500 |
+| laxita   | designer          |  29000 |
+| happy    | system_admin      |  29000 |
+| nidhi    | HR                |  29800 |
+| setu     | developer         |  30000 |
+| vidhi    | Project_codinater |  33500 |
+| harsh    | clerk             |  33800 |
+| prachi   | developer         |  35000 |
+| manshi   | designer          |  39000 |
+| swati    | HR                |  39800 |
+| sanket   | developer         |  42000 |
+| sweety   | developer         |  60000 |
++----------+-------------------+--------+
+38 rows in set (0.001 sec)
+
+46)
+select E_Name,Job_Title,Salary from employee_details order by Job_Title desc , Salary asc;
++----------+-------------------+--------+
+| E_Name   | Job_Title         | Salary |
++----------+-------------------+--------+
+| anjali   | system_admin      |  23000 |
+| megha    | system_admin      |  26000 |
+| happy    | system_admin      |  29000 |
+| nikita   | Project_codinater |  13500 |
+| bhumika  | project_codinater |  20500 |
+| bhumika  | Project_codinater |  23500 |
+| reena    | Project_codinater |  23500 |
+| sonali   | project_codinater |  27500 |
+| darshita | project_codinater |  27500 |
+| vidhi    | Project_codinater |  33500 |
+| kinjal   | Manager           |  15000 |
+| pravina  | Manager           |  25000 |
+| riya     | HR                |  21800 |
+| shayam   | HR                |  22800 |
+| nidhi    | HR                |  29800 |
+| swati    | HR                |  39800 |
+| jaymin   | developer         |  12000 |
+| pooja    | developer         |  20000 |
+| surbhi   | developer         |  22000 |
+| jarni    | developer         |  25000 |
+| joy      | developer         |  25000 |
+| shruti   | developer         |  25000 |
+| setu     | developer         |  30000 |
+| prachi   | developer         |  35000 |
+| sanket   | developer         |  42000 |
+| sweety   | developer         |  60000 |
+| roshani  | designer          |  11800 |
+| uvesh    | designer          |  12900 |
+| urvish   | designer          |  19000 |
+| roshan   | designer          |  21800 |
+| kamaxi   | designer          |  23000 |
+| laxita   | designer          |  29000 |
+| manshi   | designer          |  39000 |
+| smit     | clerk             |  13800 |
+| jay      | clerk             |  21000 |
+| jaynam   | clerk             |  23800 |
+| smita    | clerk             |  23800 |
+| harsh    | clerk             |  33800 |
++----------+-------------------+--------+
+38 rows in set (0.001 sec)
+
+
+47)
+
+select E_Name,Join_Date,Job_Title from employee_details where TIMESTAMPDIFF(YEAR, Join_Date, CURDATE()) >= 1;
++----------+------------+-------------------+
+| E_Name   | Join_Date  | Job_Title         |
++----------+------------+-------------------+
+| setu     | 2021-07-15 | developer         |
+| sweety   | 2017-06-12 | developer         |
+| shruti   | 2007-04-30 | developer         |
+| sanket   | 2001-01-10 | developer         |
+| surbhi   | 2018-05-12 | developer         |
+| jaymin   | 2003-09-09 | developer         |
+| pooja    | 2003-03-24 | developer         |
+| pravina  | 0002-04-12 | Manager           |
+| kinjal   | 0004-06-17 | Manager           |
+| reena    | 0005-05-11 | Project_codinater |
+| vidhi    | 0001-08-10 | Project_codinater |
+| nikita   | 2021-03-09 | Project_codinater |
+| bhumika  | 2020-01-08 | Project_codinater |
+| bhumika  | 2002-02-12 | project_codinater |
+| sonali   | 2012-09-18 | project_codinater |
+| darshita | 2012-09-17 | project_codinater |
+| jarni    | 2011-02-12 | developer         |
+| joy      | 2021-06-11 | developer         |
+| jay      | 2021-06-21 | clerk             |
+| smit     | 2021-07-05 | clerk             |
+| smita    | 2021-05-12 | clerk             |
+| shayam   | 2021-05-12 | HR                |
+| nidhi    | 0001-05-10 | HR                |
+| swati    | 0005-07-17 | HR                |
+| riya     | 2015-01-11 | HR                |
+| roshan   | 2015-01-11 | designer          |
+| roshani  | 0001-12-11 | designer          |
+| uvesh    | 0001-02-09 | designer          |
+| laxita   | 2019-02-07 | designer          |
+| manshi   | 2021-02-17 | designer          |
+| urvish   | 2021-02-12 | designer          |
+| kamaxi   | 0001-02-14 | designer          |
+| anjali   | 0003-02-14 | system_admin      |
+| megha    | 2012-07-11 | system_admin      |
+| happy    | 0002-07-01 | system_admin      |
++----------+------------+-------------------+
+35 rows in set (0.001 sec)
+
+48)
+ select E_Name,commision,Job_Title from employee_details where commision = 'no' order by Job_Title;
++----------+-----------+-------------------+
+| E_Name   | commision | Job_Title         |
++----------+-----------+-------------------+
+| jay      | no        | clerk             |
+| smit     | no        | clerk             |
+| harsh    | no        | clerk             |
+| kamaxi   | no        | designer          |
+| roshani  | no        | designer          |
+| roshan   | no        | designer          |
+| prachi   | no        | developer         |
+| joy      | no        | developer         |
+| shruti   | no        | developer         |
+| jaymin   | No        | developer         |
+| pooja    | No        | developer         |
+| riya     | no        | HR                |
+| swati    | no        | HR                |
+| darshita | no        | project_codinater |
+| reena    | no        | Project_codinater |
+| vidhi    | no        | Project_codinater |
+| sonali   | no        | project_codinater |
+| anjali   | no        | system_admin      |
+| megha    | no        | system_admin      |
++----------+-----------+-------------------+
+19 rows in set (0.001 sec)
+
+
+49)
+
+select ID, E_Name, Join_Date from employee_details where Job_Title = 'developer' and year(join_date)=2003 order by Join_Date;
++----+--------+------------+
+| ID | E_Name | Join_Date  |
++----+--------+------------+
+|  8 | pooja  | 2003-03-24 |
+|  7 | jaymin | 2003-09-09 |
++----+--------+------------+
+2 rows in set (0.001 sec)
+ 
+50)
+
+
+51)
+
+select E_Name from employee_details where E_Name  like('s%');
++--------+
+| E_Name |
++--------+
+| setu   |
+| sweety |
+| shruti |
+| sanket |
+| surbhi |
+| sonali |
+| smit   |
+| smita  |
+| shayam |
+| swati  |
++--------+
+
+52)
+ select E_Name,max(Salary) from employee_details where Salary=(select max(Salary) from employee_details);
++--------+-------------+
+| E_Name | max(Salary) |
++--------+-------------+
+| sweety |       60000 |
++--------+-------------+
+1 row in set (0.001 sec)
+
+
+53)
+
+select * from employee_details where ID in (select ID from employee_details where Salary = (select max(Salary) from employee_details where Salary < (select max(Salary) from employee_details)));
++----+--------+--------+--------+-----------+------------+-----------+
+| ID | E_Name | Dep_NO | Salary | Job_Title | Join_Date  | Commision |
++----+--------+--------+--------+-----------+------------+-----------+
+|  5 | sanket |      3 |  42000 | developer | 2001-01-10 | 3000      |
++----+--------+--------+--------+-----------+------------+-----------+
+1 row in set (0.002 sec)
+
+
+54)--
+
+

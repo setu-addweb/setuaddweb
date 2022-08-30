@@ -1,0 +1,184 @@
+STORED PROCEDURE 
+    
+    
+    delimiter //
+MariaDB [practice2]> CREATE PROCEDURE sp1_GetMovies()
+    -> BEGIN
+    -> select E_Name,ID from employee_details;
+    -> end //
+    Query OK, 0 rows affected (1.015 sec)
+
+MariaDB [practice2]> delimiter ;
+MariaDB [practice2]>  call sp1_GetMovies
+    -> ;
++----------+----+
+| E_Name   | ID |
++----------+----+
+| setu     |  1 |
+| prachi   |  2 |
+| sweety   |  3 |
+| shruti   |  4 |
+| sanket   |  5 |
+| surbhi   |  6 |
+| jaymin   |  7 |
+| pooja    |  8 |
+| pravina  |  9 |
+| kinjal   | 10 |
+| reena    | 11 |
+| vidhi    | 12 |
+| nikita   | 13 |
+| bhumika  | 14 |
+| bhumika  | 15 |
+| sonali   | 16 |
+| darshita | 17 |
+| jarni    | 18 |
+| joy      | 19 |
+| jay      | 20 |
+| jaynam   | 21 |
+| harsh    | 22 |
+| smit     | 23 |
+| smita    | 24 |
+| shayam   | 25 |
+| nidhi    | 26 |
+| swati    | 27 |
+| riya     | 28 |
+| roshan   | 29 |
+| roshani  | 30 |
+| uvesh    | 31 |
+| laxita   | 32 |
+| manshi   | 33 |
+| urvish   | 34 |
+| kamaxi   | 35 |
+| anjali   | 36 |
+| megha    | 37 |
+| happy    | 38 |
++----------+----+
+
+
+IN PARAMETER 
+
+
+delimiter //
+MariaDB [practice2]> create procedure sp_Emp(IN Job_Title1 varchar(50))
+    -> begin
+    -> select E_Name,ID,Job_Title from employee_details where Job_Title = Job_Title1;
+    -> end //
+Query OK, 0 rows affected (0.136 sec)
+
+MariaDB [practice2]> delimiter ;
+MariaDB [practice2]> call sp_Emp('developer');
++--------+----+-----------+
+| E_Name | ID | Job_Title |
++--------+----+-----------+
+| setu   |  1 | developer |
+| prachi |  2 | developer |
+| sweety |  3 | developer |
+| shruti |  4 | developer |
+| sanket |  5 | developer |
+| surbhi |  6 | developer |
+| jaymin |  7 | developer |
+| pooja  |  8 | developer |
+| jarni  | 18 | developer |
+| joy    | 19 | developer |
++--------+----+-----------+
+10 rows in set (0.001 sec)
+
+
+
+OUT parameter
+
+delimiter //
+MariaDB [practice2]> create procedure sp_Outtry3(OUT Total_E_Name int)
+  -> begin  
+  -> select count(E_Name)INTO Total_E_Name from employee_details where Dep_NO= 3; 
+    -> end //
+Query OK, 0 rows affected (0.135 sec)
+
+MariaDB [practice2]> delimiter ;
+
+MariaDB [practice2]> call sp_Outtry3(@PGEmpn); 
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [practice2]>  select @PGEmpn as totalemplyee; 
++--------------+
+| totalemplyee |
++--------------+
+|            9 |
++--------------+
+1 row in set (0.000 sec)
+
+
+
+INOUT PARAMETER
+
+delimiter //
+MariaDB [practice2]> create procedure sp_Inout3(inout EName_count int, In param_Depno int )
+    -> begin
+    -> select count(E_Name) INTO EName_count from employee_details where Dep_NO= param_Depno ; 
+    -> end //
+Query OK, 0 rows affected (1.229 sec)
+
+MariaDB [practice2]> delimiter ;
+MariaDB [practice2]> call sp_Inout3(@E,'3');
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [practice2]> select @E as total_employee;
++----------------+
+| total_employee |
++----------------+
+|              9 |
++----------------+
+1 row in set (0.000 sec)
+
+
+
+create user
+
+
+1) create user
+ create user 'sweety'@'localhost' identified by '';
+Query OK, 0 rows affected (0.138 sec)
+
+
+2) grant permision
+
+MariaDB [practice2]> grant all on *.* to 'sweety'@'localhost';
+Query OK, 0 rows affected (0.016 sec)
+
+3)show grant
+
+MariaDB [practice2]> show grants for 'sweety'@'localhost';
++-----------------------------------------------------+
+| Grants for sweety@localhost                         |
++-----------------------------------------------------+
+| GRANT ALL PRIVILEGES ON *.* TO `sweety`@`localhost` |
++-----------------------------------------------------+
+1 row in set (0.000 sec)
+
+
+
+create user 'vedant'@'localhost' identified by 'abcd';
+Query OK, 0 rows affected (0.123 sec)
+
+
+grant create,update,delete on employee_details.* to 'vedant'@'localhost';
+Query OK, 0 rows affected (0.333 sec)
+
+MariaDB [practice2]> show grants for 'vedant'@'localhost';
++---------------------------------------------------------------------------------------------------------------+
+| Grants for vedant@localhost                                                                                   |
++---------------------------------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO `vedant`@`localhost` IDENTIFIED BY PASSWORD '*A154C52565E9E7F94BFC08A1FE702624ED8EFFDA' |
+| GRANT UPDATE, DELETE, CREATE ON `employee_details`.* TO `vedant`@`localhost`                                  |
++---------------------------------------------------------------------------------------------------------------+
+2 rows in set (0.000 sec)
+
+
+DROP USER
+
+ DROP USER setu@localhost;  
+Query OK, 0 rows affected (0.090 sec)
+
+MariaDB [practice2]> DROP USER prachi@localhost;  
+Query OK, 0 rows affected (0.088 sec)
+
