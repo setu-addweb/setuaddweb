@@ -1,0 +1,245 @@
+************************USER DEFINE FUNCTION *********************************
+
+delimiter $$
+MariaDB [practice3]> create function fnDaily_Wages(wage decimal(10,2))
+    -> returns decimal(10,2)
+    -> deterministic
+    -> begin
+    -> declare daily_wage decimal(10,2);
+    -> set daily_wage = wage*8;
+    -> return (daily_wage);
+    -> end $$
+Query OK, 0 rows affected (0.137 sec)
+
+MariaDB [practice3]> delimiter ;
+MariaDB [practice3]> select fnDaily_Wages(50)
+    -> ;
++-------------------+
+| fnDaily_Wages(50) |
++-------------------+
+|            400.00 |
++-------------------+
+1 row in set (0.001 sec)
+
+
+*****************************function with if else*************************
+ delimiter $$
+MariaDB [practice3]> create function fnCustomer_Occupation(age int)
+    ->  returns varchar(30)
+    ->   deterministic
+    -> begin
+    ->  declare customer_occupation varchar(30);
+    ->  if age > 35 then
+    ->   set customer_occupation = 'scientist';
+    -> elseif (age <= 35 and 
+    ->  age>=30) then
+    -> set customer_occupation = 'engineer';
+    ->  elseif age < 30 then set customer_occupation = 'actor';
+    -> end if;
+    -> return(customer_occupation);
+    -> end $$
+Query OK, 0 rows affected (1.036 sec)
+
+delimiter ;
+select ename,age,fnCustomer_Occupation(age) from employee order by age;
++----------+-----+----------------------------+
+| ename    | age | fnCustomer_Occupation(age) |
++----------+-----+----------------------------+
+| setu     |  22 | actor                      |
+| prachi   |  22 | actor                      |
+| rutvi    |  23 | actor                      |
+| vedant   |  25 | actor                      |
+| kamaxi   |  25 | actor                      |
+| sonali   |  26 | actor                      |
+| kamini   |  27 | actor                      |
+| jay      |  29 | actor                      |
+| riya     |  30 | engineer                   |
+| roshan   |  34 | engineer                   |
+| mayank   |  37 | scientist                  |
+| prajakta |  38 | scientist                  |
+| mayuri   |  40 | scientist                  |
+| kinjal   |  40 | scientist                  |
+| reena    |  48 | scientist                  |
++----------+-----+----------------------------+
+15 rows in set (0.002 sec)
+
+
+**************************BEFORE INSERT *********************************
+
+ CREATE TABLE people (age INT, name varchar(150));
+
+
+MariaDB [practice3]> delimiter //
+MariaDB [practice3]> create trigger agecheck2 before insert on people for each row if          new.age<0 then set new.age = 0;end if;//
+Query OK, 0 rows affected (0.390 sec)
+
+MariaDB [practice3]> delimiter ;
+MariaDB [practice3]> insert into people values (-22,'setu'),(30,'jay');
+Query OK, 2 rows affected (0.144 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+MariaDB [practice3]> select * from people;
++------+------+
+| age  | name |
++------+------+
+|    0 | setu |
+|   30 | jay  |
++------+------+
+2 rows in set (0.001 sec)
+
+
+********************************after insert**********************************
+delimiter $$
+MariaDB [practice3]> create trigger after_members_insert
+    -> after insert
+    -> on members for each row 
+    -> begin
+    -> if new.birthDate is null then
+    -> insert into reminders(memberID,message)
+    -> values(new.id,concat('hi',new.name,',please update your date of birth.'));
+    -> end if;
+    -> end $$
+Query OK, 0 rows affected (0.140 sec)
+
+MariaDB [practice3]> delimiter ;
+MariaDB [practice3]> insert into members(name,email,birthDate) values('setu','setu@gmail.com',null)
+    -> ;
+Query OK, 1 row affected (0.115 sec)
+
+MariaDB [practice3]> select * from reminders;
++----+----------+------------------------------------------+
+| id | memberID | message                                  |
++----+----------+------------------------------------------+
+|  1 |        1 | hisetu,please update your date of birth. |
++----+----------+------------------------------------------+
+1 row in set (0.001 sec)
+
+*****************************before update**************************8
+delimiter //
+MariaDB [practice3]> create trigger person1_bu before update on person1 for each row if new.age<17 then signal sqlstate '50002' set message_text ='person must be older than 18.';
+    -> end if;
+    -> //
+Query OK, 0 rows affected (0.316 sec)
+
+MariaDB [practice3]> delimiter ;
+
+MariaDB [practice3]> update person1 set age = 16 where name = 'mark';
+ERROR 1644 (50002): person must be older than 18.
+
+
+
+******************************after update ************************88
+ create table person2(name varchar(45),age int);
+Query OK, 0 rows affected (0.363 sec)
+
+MariaDB [practice3]> create table average_age (age int);
+Query OK, 0 rows affected (0.777 sec)
+
+MariaDB [practice3]> insert into person2 values('matthew',22),('mark',35);
+Query OK, 2 rows affected (0.062 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+MariaDB [practice3]> delimiter //
+
+ create trigger person_au44 after update on person2 for each row update average_age set age = (select AVG(age) from person2);
+Query OK, 0 rows affected (0.252 sec)
+
+MariaDB [practice3]> delimiter ;
+MariaDB [practice3]> update person2 set age = 25 where name = 'mark';
+Query OK, 1 row affected (0.121 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [practice3]> select * from average_age;
++-----+
+| age |
++-----+
+|  24 |
++-----+
+1 row in set (0.001 sec)
+
+MariaDB [practice3]> select * from person2;
++---------+------+
+| name    | age  |
++---------+------+
+| matthew |   22 |
+| mark    |   25 |
++---------+------+
+2 rows in set (0.001 sec)
+
+
+*******************************before delete****************************************
+create table person3(name varchar(45),age int);
+Query OK, 0 rows affected (0.280 sec)
+
+MariaDB [practice3]> CREATE TABLE person_archive (name varchar(45), age int);
+Query OK, 0 rows affected (0.456 sec)
+
+INSERT INTO person3 VALUES ('Matthew', 25), ('Mark', 20);
+Query OK, 2 rows affected (0.041 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+MariaDB [practice3]> delimiter //
+
+CREATE TRIGGER person_bd BEFORE DELETE ON person3 FOR EACH ROW INSERT INTO person_archive (name, age) VALUES (OLD.name, OLD.age);//
+Query OK, 0 rows affected (0.133 sec)
+
+MariaDB [practice3]> delimiter ;
+MariaDB [practice3]> delete from person3 where name = 'mark';
+Query OK, 1 row affected (0.121 sec)
+
+MariaDB [practice3]> select * from person_archive;
++------+------+
+| name | age  |
++------+------+
+| Mark |   20 |
++------+------+
+1 row in set (0.001 sec)
+
+
+***************************before delete**********************************
+create table person4(name varchar(45),age int);
+Query OK, 0 rows affected (0.575 sec)
+
+CREATE TABLE person_archive2 (age int);
+Query OK, 0 rows affected (0.969 sec)
+
+MariaDB [practice3]> INSERT INTO person4 VALUES ('Matthew', 25), ('Mark', 20); 
+
+
+*******************************after delete*********************************
+MariaDB [practice3]> CREATE TABLE person (name varchar(45), age int);
+Query OK, 0 rows affected (0.195 sec)
+
+MariaDB [practice3]> CREATE TABLE average_age2 (age int);
+Query OK, 0 rows affected (0.562 sec)
+
+MariaDB [practice3]> INSERT INTO person VALUES ('Matthew', 25), ('Mark', 20);
+Query OK, 2 rows affected (0.034 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+MariaDB [practice3]> delimiter //
+MariaDB [practice3]> CREATE TRIGGER 
+    -> person2_ad AFTER DELETE
+    -> ON person
+    -> FOR EACH ROW
+    -> update average_age2 set age =(SELECT AVG(person.age) FROM person);// 
+Query OK, 0 rows affected (0.575 sec)
+
+MariaDB [practice3]> delimiter ;
+
+MariaDB [practice3]> DELETE FROM person WHERE name = 'Mark';
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [practice3]> Select * from average_age2;
++------+
+| age  |
++------+
+|   22 |
++------+
+
+
+
+
+
+
+

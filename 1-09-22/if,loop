@@ -1,0 +1,160 @@
+SELECT IF(500<1000, "YES", "NO");
++---------------------------+
+| IF(500<1000, "YES", "NO") |
++---------------------------+
+| YES                       |
++---------------------------+
+1 row in set (0.092 sec)
+
+MariaDB [practice2]> SELECT IF(STRCMP("hello","bye") = 0, "YES", "NO");
++--------------------------------------------+
+| IF(STRCMP("hello","bye") = 0, "YES", "NO") |
++--------------------------------------------+
+| NO                                         |
++--------------------------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [practice2]> SELECT OrderID, Quantity, IF(Quantity>10, "MORE", "LESS")
+    -> FROM OrderDetails;
+ERROR 1146 (42S02): Table 'practice2.OrderDetails' doesn't exist
+MariaDB [practice2]> SELECT E_Name, ID, IF(ID>10, "MORE", "LESS") FROM employee_details;
++----------+----+---------------------------+
+| E_Name   | ID | IF(ID>10, "MORE", "LESS") |
++----------+----+---------------------------+
+| setu""   |  1 | LESS                      |
+| prachi"" |  2 | LESS                      |
+| sweety   |  3 | LESS                      |
+| shruti   |  4 | LESS                      |
+| sanket   |  5 | LESS                      |
+| surbhi   |  6 | LESS                      |
+| jaymin   |  7 | LESS                      |
+| pooja    |  8 | LESS                      |
+| pravina  |  9 | LESS                      |
+| kinjal   | 10 | LESS                      |
+| reena    | 11 | MORE                      |
+| vidhi    | 12 | MORE                      |
+| nikita   | 13 | MORE                      |
+| bhumika  | 14 | MORE                      |
+| bhumika  | 15 | MORE                      |
+| sonali   | 16 | MORE                      |
+| darshita | 17 | MORE                      |
+| jarni    | 18 | MORE                      |
+| joy      | 19 | MORE                      |
+| jay      | 20 | MORE                      |
+| jaynam   | 21 | MORE                      |
+| harsh    | 22 | MORE                      |
+| smit     | 23 | MORE                      |
+| smita    | 24 | MORE                      |
+| shayam   | 25 | MORE                      |
+| nidhi    | 26 | MORE                      |
+| swati    | 27 | MORE                      |
+| riya     | 28 | MORE                      |
+| roshan   | 29 | MORE                      |
+| roshani  | 30 | MORE                      |
+| uvesh    | 31 | MORE                      |
+| laxita   | 32 | MORE                      |
+| manshi   | 33 | MORE                      |
+| urvish   | 34 | MORE                      |
+| kamaxi   | 35 | MORE                      |
+| anjali   | 36 | MORE                      |
+| megha    | 37 | MORE                      |
+| happy    | 38 | MORE                      |
++----------+----+---------------------------+
+38 rows in set (1.174 sec)
+
+MariaDB [practice2]> SELECT E_Name, Salary, IF(Salary>5000, "MORE", "LESS") FROM employee_details;
++----------+--------+---------------------------------+
+| E_Name   | Salary | IF(Salary>5000, "MORE", "LESS") |
++----------+--------+---------------------------------+
+| setu""   |  30000 | MORE                            |
+| prachi"" |  35000 | MORE                            |
+| sweety   |  60000 | MORE                            |
+| shruti   |  25000 | MORE                            |
+| sanket   |  42000 | MORE                            |
+| surbhi   |  22000 | MORE                            |
+| jaymin   |  12000 | MORE                            |
+| pooja    |  20000 | MORE                            |
+| pravina  |  25000 | MORE                            |
+| kinjal   |  15000 | MORE                            |
+| reena    |  23500 | MORE                            |
+| vidhi    |  33500 | MORE                            |
+| nikita   |  13500 | MORE                            |
+| bhumika  |  23500 | MORE                            |
+| bhumika  |  20500 | MORE                            |
+| sonali   |  27500 | MORE                            |
+| darshita |  27500 | MORE                            |
+| jarni    |  25000 | MORE                            |
+| joy      |  25000 | MORE                            |
+| jay      |  21000 | MORE                            |
+| jaynam   |  23800 | MORE                            |
+| harsh    |  33800 | MORE                            |
+| smit     |  13800 | MORE                            |
+| smita    |  23800 | MORE                            |
+| shayam   |  22800 | MORE                            |
+| nidhi    |  29800 | MORE                            |
+| swati    |  39800 | MORE                            |
+| riya     |  21800 | MORE                            |
+| roshan   |  21800 | MORE                            |
+| roshani  |  11800 | MORE                            |
+| uvesh    |  12900 | MORE                            |
+| laxita   |  29000 | MORE                            |
+| manshi   |  39000 | MORE                            |
+| urvish   |  19000 | MORE                            |
+| kamaxi   |  23000 | MORE                            |
+| anjali   |  23000 | MORE                            |
+| megha    |  26000 | MORE                            |
+| happy    |  29000 | MORE                            |
++----------+--------+---------------------------------+
+38 rows in set (0.001 sec)
+
+MariaDB [practice2]> SELECT REPEAT(CustomerName, 2)
+    -> FROM Customers;
+ERROR 1146 (42S02): Table 'practice2.Customers' doesn't exist
+MariaDB [practice2]> SELECT REPEAT(E_Name, 2) FROM employee_Details;
+ERROR 1146 (42S02): Table 'practice2.employee_Details' doesn't exist
+MariaDB [practice2]> SELECT REPEAT(E_Name, 2) FROM employee_details;
++-------------------+
+| REPEAT(E_Name, 2) |
++-------------------+
+| setu""setu""      |
+| prachi""prachi""  |
+| sweetysweety      |
+| shrutishruti      |
+| sanketsanket      |
+| surbhisurbhi      |
+| jayminjaymin      |
+| poojapooja        |
+| pravinapravina    |
+| kinjalkinjal      |
+| reenareena        |
+| vidhividhi        |
+| nikitanikita      |
+| bhumikabhumika    |
+| bhumikabhumika    |
+| sonalisonali      |
+| darshitadarshita  |
+| jarnijarni        |
+| joyjoy            |
+| jayjay            |
+| jaynamjaynam      |
+| harshharsh        |
+| smitsmit          |
+| smitasmita        |
+| shayamshayam      |
+| nidhinidhi        |
+| swatiswati        |
+| riyariya          |
+| roshanroshan      |
+| roshaniroshani    |
+| uveshuvesh        |
+| laxitalaxita      |
+| manshimanshi      |
+| urvishurvish      |
+| kamaxikamaxi      |
+| anjalianjali      |
+| meghamegha        |
+| happyhappy        |
++-------------------+
+38 rows in set (0.001 sec)
+
+
